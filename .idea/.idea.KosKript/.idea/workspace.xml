@@ -4,14 +4,16 @@
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/DocumentsAppScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/DocumentsAppScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/EncryptionMachinesAppScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/EncryptionMachinesAppScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/OrdersAppScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/OrdersAppScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/SurrenderPeopleAppScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/SurrenderPeopleAppScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtomManagers.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ButtomManagers/AppOpener.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -77,6 +79,7 @@
       <workItem from="1680013344103" duration="3535000" />
       <workItem from="1680178532416" duration="5000" />
       <workItem from="1680413513815" duration="2779000" />
+      <workItem from="1680425563654" duration="1971000" />
     </task>
     <servers />
   </component>

@@ -4,33 +4,33 @@ namespace AppSpripts
 {
     public class SurrenderPeopleAppScript : MonoBehaviour
     {
-        public GameObject CurrentApp;
+        public GameObject currentApp;
         
-        public GameObject EncryptionMachinesApp;
-        public GameObject OrdersApp;
-        public GameObject DocumentsApp;
+        public GameObject encryptionMachinesApp;
+        public GameObject ordersApp;
+        public GameObject documentsApp;
 
         public void OpenSurrenderPeopleApp()
         {
-            if (EncryptionMachinesApp.activeSelf)
+            if (encryptionMachinesApp.activeSelf)
             {
-                EncryptionMachinesApp.GetComponent<EncryptionMachinesAppScript>().CloseApp();
+                encryptionMachinesApp.GetComponent<EncryptionMachinesAppScript>().CloseApp();
             }
-            if (DocumentsApp.activeSelf)
+            if (documentsApp.activeSelf)
             {
-                DocumentsApp.GetComponent<DocumentsAppScript>().CloseApp();
+                documentsApp.GetComponent<DocumentsAppScript>().CloseApp();
             }
-            if (OrdersApp.activeSelf)
+            if (ordersApp.activeSelf)
             {
-                OrdersApp.GetComponent<OrdersAppScript>().CloseApp();
+                ordersApp.GetComponent<OrdersAppScript>().CloseApp();
             }
 
-            CurrentApp.SetActive(true);
+            currentApp.SetActive(true);
         }
         
         public void CloseApp()
         {
-            CurrentApp.SetActive(false);
+            currentApp.SetActive(false);
         }
     }
 }
