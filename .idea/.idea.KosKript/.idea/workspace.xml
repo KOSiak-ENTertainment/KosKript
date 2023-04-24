@@ -3,17 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/DocumentsAppScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/DocumentsAppScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/EncryptionMachinesAppScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/EncryptionMachinesAppScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/OrdersAppScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/OrdersAppScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/SurrenderPeopleAppScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AppSpripts/SurrenderPeopleAppScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtomManagers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Perfabs/OrdersAppObj.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Perfabs/OrdersAppObj.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AppSpripts/OrdersManagerScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/GameManagerScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScripts/PauseGameMenuScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScripts/QuitGameScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -32,6 +36,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -80,6 +85,11 @@
       <workItem from="1680178532416" duration="5000" />
       <workItem from="1680413513815" duration="2779000" />
       <workItem from="1680425563654" duration="1971000" />
+      <workItem from="1680685416105" duration="2547000" />
+      <workItem from="1680699196587" duration="263000" />
+      <workItem from="1680699614972" duration="492000" />
+      <workItem from="1681719915089" duration="1736000" />
+      <workItem from="1682220283643" duration="2395000" />
     </task>
     <servers />
   </component>
