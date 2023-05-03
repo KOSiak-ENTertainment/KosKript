@@ -1,42 +1,66 @@
-using System;
-using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using MachinesScripts;
 
-public class GameManagerScript : MonoBehaviour
+namespace GameManagementScripts
 {
-    public Text _textUI;
-    public string _fileName;
-
-    bool WaitUntil() => Input.GetKeyDown(KeyCode.Space);
-    
-    void Start()
+    public class GameManagerScript : MonoBehaviour
     {
-        WriteText();
-    }
+        public GameObject bugSolver;
+        public Text textUI;
+        public Text customerNameUI;
+        public Text encryptedText;
+        public InputField inputField;
+        public Text warningText;
 
-    private void WriteText()
-    {
-        var path = Path.Combine(Application.dataPath, _fileName);
+        private TextTyperScript _textTyper;
+        private string _rightEncryptedText;
 
-        if (File.Exists(path))
+        private void Start()
         {
-            var paragraphs = File.ReadAllText(path)
-                .Split(new[] { "\r\n\r\n", "\n\n" }, System.StringSplitOptions.RemoveEmptyEntries);
+            InitTextTyper();
+            GameLogic();
+        }
 
-            _textUI.text = "";
+        private void InitTextTyper()
+        {
+            var textTyperObject = new GameObject("TextTyper");
+            _textTyper = textTyperObject.AddComponent<TextTyperScript>();
+        }
 
-            for (var paragraphIndex = 0; paragraphIndex < paragraphs.Length; paragraphIndex++)
+        private void GameLogic()
+        {
+            var paragraphs = _textTyper.GetParagraphsFromFile("Dialogs/ArchieRochesterDialog.txt");
+            customerNameUI.text = paragraphs[0];
+            textUI.text = paragraphs[1]; //TODO сделать посимвольный вывод
+            var text = _textTyper.GetParagraphsFromFile("Orders/ArchieRochesterOrder.txt");
+            var cesMash = new CaesarMachine(text[0]);
+            var encodedFile = cesMash.UncodedFile;
+            var bag1 = new SymbolAutoRegistrationError(cesMash);
+            encryptedText.text = encodedFile.Substring(0, bag1.IntervalBegin);
+            bugSolver.SetActive(true);
+            warningText.text = bag1.UnencryptedPieceText + " " + bag1.EncryptedPieceText;
+            _rightEncryptedText = bag1.EncryptedPieceText;
+            inputField.text = bag1.EncryptedPieceText;
+            // Добавляем обработчик события EndEdit для InputField
+            inputField.onEndEdit.AddListener(delegate { OnInputEndEdit(encodedFile, bag1); });
+        }
+
+        private void OnInputEndEdit(string encodedFile, SymbolAutoRegistrationError bag1)
+        {
+            // Получаем введенный текст
+            string userInput = inputField.text;
+            
+            if (userInput.Equals(_rightEncryptedText))
             {
-                var paragraph = paragraphs[paragraphIndex];
-
-                _textUI.text += paragraph + "\n\n";
+                // Добавляем его к зашифрованному тексту
+                encryptedText.text += " " + userInput + " " +
+                                      encodedFile.Substring(bag1.IntervalBegin + bag1.CountCipherSymbol);
+                // Удаляем обработчик события EndEdit, чтобы избежать повторной обработки
+                inputField.onEndEdit.RemoveAllListeners();
+                
+                bugSolver.SetActive(false);
             }
         }
-        else
-        {
-            Debug.LogError("File not found: " + path);
-        }
     }
-
 }
