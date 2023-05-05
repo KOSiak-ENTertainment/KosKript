@@ -14,7 +14,7 @@ namespace GameManagementScripts
         public Text warningText;
 
         private TextTyperScript _textTyper;
-        private string _rightEncryptedText;
+        private bool _firstOrderSolved;
 
         private void Start()
         {
@@ -40,26 +40,31 @@ namespace GameManagementScripts
             encryptedText.text = encodedFile.Substring(0, bag1.IntervalBegin);
             bugSolver.SetActive(true);
             warningText.text = bag1.UnencryptedPieceText + " " + bag1.EncryptedPieceText;
-            _rightEncryptedText = bag1.EncryptedPieceText;
             inputField.text = bag1.EncryptedPieceText;
             // Добавляем обработчик события EndEdit для InputField
-            inputField.onEndEdit.AddListener(delegate { OnInputEndEdit(encodedFile, bag1); });
+            inputField.onEndEdit.AddListener(delegate { OnInputEndEdit(encodedFile, bag1, paragraphs); });
         }
 
-        private void OnInputEndEdit(string encodedFile, SymbolAutoRegistrationError bag1)
+        private void OnInputEndEdit(string encodedFile, SymbolAutoRegistrationError bag1, string[] paragraphs)
         {
             // Получаем введенный текст
             string userInput = inputField.text;
             
-            if (userInput.Equals(_rightEncryptedText))
+            if (userInput.Equals(bag1.EncryptedPieceText))
             {
+                _firstOrderSolved = true;
                 // Добавляем его к зашифрованному тексту
                 encryptedText.text += " " + userInput + " " +
                                       encodedFile.Substring(bag1.IntervalBegin + bag1.CountCipherSymbol);
                 // Удаляем обработчик события EndEdit, чтобы избежать повторной обработки
                 inputField.onEndEdit.RemoveAllListeners();
                 
-                bugSolver.SetActive(false);
+                bugSolver.SetActive(false);  
+                textUI.text = paragraphs[2];
+
+                paragraphs = _textTyper.GetParagraphsFromFile("Dialogs/KolesnikovaTamaraDialog.txt");
+                customerNameUI.text = paragraphs[0];
+                textUI.text = paragraphs[1];
             }
         }
     }

@@ -2451,6 +2451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078529780}
+  - component: {fileID: 1078529781}
   m_Layer: 0
   m_Name: TaskbarManager
   m_TagString: Untagged
@@ -2478,6 +2479,28 @@ RectTransform:
   m_AnchoredPosition: {x: 132, y: -996.9348}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1078529781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078529779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d26f533836dfd43bc6f5992d569075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasApps:
+  - {fileID: 853268793}
+  - {fileID: 187788434}
+  - {fileID: 1297874940}
+  - {fileID: 223638692}
+  appButtons:
+  - {fileID: 1693208067}
+  - {fileID: 2060348517}
+  - {fileID: 361510429}
+  - {fileID: 1404472337}
 --- !u!1 &1221147405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,7 +2595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1297874941
 RectTransform:
   m_ObjectHideFlags: 0
