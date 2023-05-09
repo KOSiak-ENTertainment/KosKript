@@ -6,13 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/KolesnikovaTamaraDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/KolesnikovaTamaraDialog.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Messages.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/GameManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/GameManagerScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/TextTyperScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/TextTyperScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/CaesarOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/CaesarOrder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/SubmitOrderButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/SubmitOrderButtonScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/MachinesImages/Alphabet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/MachinesImages/Alphabet.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/MachinesImages/RussianLetterFrequency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/MachinesImages/RussianLetterFrequency.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +147,7 @@
       <workItem from="1683449772088" duration="6636000" />
       <workItem from="1683613037443" duration="11000" />
       <workItem from="1683613437225" duration="631000" />
-      <workItem from="1683648959663" duration="11858000" />
+      <workItem from="1683648959663" duration="16306000" />
     </task>
     <servers />
   </component>

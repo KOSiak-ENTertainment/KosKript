@@ -11,10 +11,15 @@ namespace Orders
     {
         public List<GameObject> orders;
         public Text encryptionMachineTextUI;
+        public int countOfOrders = 3;
 
         public void SolveFirstOrder()
         {
             SolveOrder(1, "Orders/ArchieRochesterOrder.txt");
+        }
+        public void SolveSecondOrder()
+        {
+            SolveOrder(2, "Orders/KolesnikovaTamaraOrder.txt");
         }
 
         private void SolveOrder(int numOfOrder, string orderFilePath)
@@ -79,6 +84,10 @@ namespace Orders
                 ContinueOrder(correctInput,
                     new CaesarMachine(gameObject.AddComponent<TextTyperScript>()
                         .GetTextParagraphs(orderFilePath)[0]), numOfOrder);
+                var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+                var bugSolver = orderScript.bugSolver;
+                var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
+                bugWarning.text = "Шифорвка выполнена успешно!";
             }
             else
             {

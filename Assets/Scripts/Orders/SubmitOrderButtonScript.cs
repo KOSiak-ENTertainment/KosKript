@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using DialogManager;
 using GameManagementScripts;
@@ -9,11 +7,14 @@ public class SubmitOrderButtonScript : MonoBehaviour
 {
     public string thanks;
     public GameObject submitButton;
+    public int numOfOrderToSubmit;
 
-    public async void SubmitFirstOrder()
+    public void SubmitFirstOrder() => SubmitOrder(numOfOrderToSubmit - 1);
+
+    private async void SubmitOrder(int numOfOrder)
     {
         var gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
-        gameManager.gameState = GameManagerScript.GameStates.FirstOrderCompleted;
+        gameManager.gameState = (GameManagerScript.GameStates)numOfOrder + gameManager.ordersManager.countOfOrders;
 
         if (thanks != null)
         {
@@ -22,16 +23,15 @@ public class SubmitOrderButtonScript : MonoBehaviour
             thanks = null;
         }
 
-        await WaitAndChangeGameState(gameManager, GameManagerScript.GameStates.SecondOrder);
+        await WaitAndChangeGameState(gameManager, (GameManagerScript.GameStates)numOfOrder);
     }
     
-    async Task<Task> WaitAndChangeGameState(GameManagerScript gameManager, GameManagerScript.GameStates newGameState)
+    async Task WaitAndChangeGameState(GameManagerScript gameManager, GameManagerScript.GameStates newGameState)
     {
         await Task.Delay(5000);
-        gameManager.gameState = newGameState;
+        gameManager.gameState = newGameState + 1;
         submitButton.SetActive(false);
-        Debug.Log("GG");
-
-        return Task.CompletedTask;
+        Debug.Log("Order has been submitted");
+        numOfOrderToSubmit++;
     }
 }

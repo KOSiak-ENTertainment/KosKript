@@ -7,14 +7,14 @@ namespace Orders
 {
     public class CaesarOrder : MonoBehaviour
     {
-        public string orderFilePath;
+        public string orderFilePath; //TODO Использовать orderFilePath
         public GameObject bugSolver;
         private string[] _orderText;
         public GameObject submitOrder;
 
         public SymbolAutoRegistrationError Bug1 { get; private set; }
 
-        public string[] GetOrderText() => _orderText;
+        public string[] GetOrderText() => _orderText; //TODO Использовать этот метод
         
         public void InitBug(CaesarMachine caesarMachine)
         {

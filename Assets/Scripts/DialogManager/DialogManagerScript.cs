@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using GameManagementScripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,9 +16,14 @@ namespace DialogManager
             _textTyperScript = gameObject.AddComponent<TextTyperScript>();
         }
 
-        public void ShowFirstDayDialogs()
+        public void ShowFirstCustomerDialogs()
         {
             ShowDialog("Dialogs/ArchieRochesterDialog.txt", true);
+        }
+
+        public void ShowSecondCustomerDialogs()
+        {
+            ShowDialog("Dialogs/KolesnikovaTamaraDialog.txt", false);
         }
         
         private void ShowDialog(string dialogPath, bool isThereGratitude)

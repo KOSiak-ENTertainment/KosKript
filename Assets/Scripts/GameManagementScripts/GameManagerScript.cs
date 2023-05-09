@@ -14,21 +14,23 @@ namespace GameManagementScripts
     { 
         public OrdersManager ordersManager;
         public DialogManagerScript dialogManager;
-        public GameStates gameState = GameStates.FirstOrder;
+        public GameStates gameState = GameStates.NothingToDo;
 
         public enum GameStates
         {
-            NothingToDo,
             FirstOrder,
-            FirstOrderCompleted,
             SecondOrder,
-            SecondOrderCompleted
+            ThirdOrder,
+            FirstOrderCompleted,
+            SecondOrderCompleted,
+            ThirdOrderCompleted,
+            NothingToDo
         }
 
         public void Start()
         {
             dialogManager.Start();
-            dialogManager.ShowFirstDayDialogs();
+            dialogManager.ShowFirstCustomerDialogs();
             ordersManager.SolveFirstOrder();
         }
 
@@ -36,8 +38,15 @@ namespace GameManagementScripts
         {
             if (gameState == GameStates.SecondOrder)
             {
-                Debug.Log("LOOOOOOOOOOOOOOOOOOL!");
-                gameState = GameStates.SecondOrderCompleted;
+                dialogManager.ShowSecondCustomerDialogs();
+                ordersManager.SolveSecondOrder();
+                gameState = GameStates.NothingToDo;
+            }
+            
+            if (gameState == GameStates.ThirdOrder)
+            {
+                Debug.Log("FUSKDJFLSKDJFSLDKFJSDLFK!!!!!");
+                gameState = GameStates.NothingToDo;
             }
         }
         
