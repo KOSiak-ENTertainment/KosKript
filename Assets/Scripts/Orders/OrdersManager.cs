@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using GameManagementScripts;
 using MachinesScripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,11 +14,19 @@ namespace Orders
 
         public void SolveFirstOrder()
         {
-            var firstOrderScript = orders[0].GetComponent<CaesarOrder>();
-            var caesarMachine = new CaesarMachine(firstOrderScript.GetTextParagraphs("Orders/ArchieRochesterOrder.txt")[0]);
-            firstOrderScript.InitFirstBug(caesarMachine);
+            SolveOrder(1, "Orders/ArchieRochesterOrder.txt");
+        }
+
+        private void SolveOrder(int numOfOrder, string orderFilePath)
+        {
+            var firstOrderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+            if (gameObject == null) 
+                return;
+            
+            var caesarMachine = new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0]);
+            firstOrderScript.InitBug(caesarMachine);
             var bug1 = firstOrderScript.Bug1;
-            var firstPartOfText = caesarMachine.UncodedFile.Substring(0, bug1.IntervalBegin);
+            var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug1.IntervalBegin);
             var bugSolver = firstOrderScript.bugSolver;
             var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
             var inputField = bugSolver.transform.Find("InputField").GetComponent<InputField>();
@@ -27,12 +36,19 @@ namespace Orders
 
             bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\"";
 
-            StartCoroutine(WaitForInputAndValidate(inputField, bug1.UnencryptedPieceText, 3));
+            StartCoroutine(WaitForInputAndValidate(inputField, bug1.UnencryptedPieceText, 3, firstOrderScript.submitOrder, numOfOrder, orderFilePath));
+        }
+
+        private void ContinueOrder(string userInput, CaesarMachine caesarMachine, int numOfOrder)
+        {
+            var firstOrderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+            var bug1 = firstOrderScript.Bug1;
             
-            Debug.Log("Fuck");
+            encryptionMachineTextUI.text += userInput;
+            encryptionMachineTextUI.text += caesarMachine.EncodedFile.Substring(bug1.IntervalBegin + bug1.CountCipherSymbol);
         }
         
-        private IEnumerator WaitForInputAndValidate(InputField inputField, string correctInput, int maxAttempts)
+        private IEnumerator WaitForInputAndValidate(InputField inputField, string correctInput, int maxAttempts, GameObject submitOrder, int numOfOrder, string orderFilePath)
         {
             var attempts = 0;
             var inputCorrect = false;
@@ -59,25 +75,31 @@ namespace Orders
             if (inputCorrect)
             {
                 Debug.Log("Input correct!");
+                submitOrder.SetActive(true);
+                ContinueOrder(correctInput,
+                    new CaesarMachine(gameObject.AddComponent<TextTyperScript>()
+                        .GetTextParagraphs(orderFilePath)[0]), numOfOrder);
             }
             else
             {
                 Debug.Log("Out of attempts.");
 
                 // Reset some fields and start again
-                var firstOrderScript = orders[0].GetComponent<CaesarOrder>();
-                var caesarMachine = new CaesarMachine(firstOrderScript.GetTextParagraphs("Orders/ArchieRochesterOrder.txt")[0]);
-                var bug1 = new SymbolAutoRegistrationError(caesarMachine);
-                var firstPartOfText = caesarMachine.UncodedFile.Substring(0, bug1.IntervalBegin);
-                var bugSolver = firstOrderScript.bugSolver;
+                var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+                var caesarMachine = new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0]);
+                orderScript.InitBug(caesarMachine);
+                var bug1 = orderScript.Bug1;
+                var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug1.IntervalBegin);
+                var bugSolver = orderScript.bugSolver;
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
                 
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);
         
                 bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\"";
-        
-                yield return StartCoroutine(WaitForInputAndValidate(inputField, bug1.UnencryptedPieceText, 3));
+
+                yield return StartCoroutine(WaitForInputAndValidate(inputField, bug1.UnencryptedPieceText, 3,
+                    orderScript.submitOrder, numOfOrder, orderFilePath));
             }
 
             Debug.Log("Coroutine finished!");
