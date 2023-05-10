@@ -39,9 +39,10 @@ namespace Orders
             encryptionMachineTextUI.text = firstPartOfText;
             bugSolver.SetActive(true);
 
-            bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\"";
+            bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\" со сдвигом: " + caesarMachine.CaesarAlphabet.Shift;
 
-            StartCoroutine(WaitForInputAndValidate(inputField, bug1.UnencryptedPieceText, 3, firstOrderScript.submitOrder, numOfOrder, orderFilePath));
+            StartCoroutine(WaitForInputAndValidate(inputField, bug1.EncryptedPieceText, 3,
+                firstOrderScript.submitOrder, numOfOrder, orderFilePath));
         }
 
         private void ContinueOrder(string userInput, CaesarMachine caesarMachine, int numOfOrder)
@@ -107,7 +108,7 @@ namespace Orders
         
                 bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\"";
 
-                yield return StartCoroutine(WaitForInputAndValidate(inputField, bug1.UnencryptedPieceText, 3,
+                yield return StartCoroutine(WaitForInputAndValidate(inputField, bug1.EncryptedPieceText, 3,
                     orderScript.submitOrder, numOfOrder, orderFilePath));
             }
 
