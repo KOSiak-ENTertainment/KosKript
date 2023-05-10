@@ -28,7 +28,7 @@ public class SubmitOrderButtonScript : MonoBehaviour
     
     async Task WaitAndChangeGameState(GameManagerScript gameManager, GameManagerScript.GameStates newGameState)
     {
-        await Task.Delay(5000);
+        await Task.Delay(10000);
         gameManager.gameState = newGameState + 1;
         submitButton.SetActive(false);
         Debug.Log("Order has been submitted");

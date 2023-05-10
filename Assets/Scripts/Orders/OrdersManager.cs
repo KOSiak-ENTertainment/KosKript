@@ -38,6 +38,7 @@ namespace Orders
 
             encryptionMachineTextUI.text = firstPartOfText;
             bugSolver.SetActive(true);
+            inputField.text = bug1.EncryptedPieceText;
 
             bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\" со сдвигом: " + caesarMachine.CaesarAlphabet.Shift;
 
@@ -68,6 +69,8 @@ namespace Orders
                 {
                     // Input is correct, break out of loop
                     inputCorrect = true;
+                    inputField.text = null;
+                    Debug.Log("input field cleaned");
                 }
                 else
                 {
@@ -105,8 +108,9 @@ namespace Orders
                 
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);
+                inputField.text = bug1.EncryptedPieceText;
         
-                bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\"";
+                bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\" со сдвигом: " + caesarMachine.CaesarAlphabet.Shift;
 
                 yield return StartCoroutine(WaitForInputAndValidate(inputField, bug1.EncryptedPieceText, 3,
                     orderScript.submitOrder, numOfOrder, orderFilePath));

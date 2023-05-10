@@ -17,7 +17,7 @@ namespace MachinesScripts
         {
             CaesarAlphabetLowercaseLetters = new Dictionary<int, char>(33);
             CaesarAlphabetCapitalLetters = new Dictionary<int, char>(33);
-            Shift = new Random().Next(2, 30);
+            Shift = new Random().Next(2, 10);
             FillAlphabet();
         }
 
