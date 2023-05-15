@@ -12,23 +12,21 @@ namespace Orders
         public List<GameObject> orders;
         public Text encryptionMachineTextUI;
         public int countOfOrders = 3;
+        public int maxPossibleShift = 2;
 
-        public void SolveFirstOrder()
-        {
-            SolveOrder(1, "Orders/ArchieRochesterOrder.txt");
-        }
-        public void SolveSecondOrder()
-        {
-            SolveOrder(2, "Orders/KolesnikovaTamaraOrder.txt");
-        }
+        public void SolveFirstOrder() => SolveOrder(1, "Orders/ArchieRochesterOrder.txt");
+        
+        public void SolveSecondOrder() => SolveOrder(2, "Orders/KolesnikovaTamaraOrder.txt");
 
         private void SolveOrder(int numOfOrder, string orderFilePath)
         {
             var firstOrderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
             if (gameObject == null) 
                 return;
-            
-            var caesarMachine = new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0]);
+
+            var caesarMachine =
+                new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0],
+                    maxPossibleShift, false, 1);
             firstOrderScript.InitBug(caesarMachine);
             var bug1 = firstOrderScript.Bug1;
             var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug1.IntervalBegin);
@@ -86,8 +84,8 @@ namespace Orders
                 Debug.Log("Input correct!");
                 submitOrder.SetActive(true);
                 ContinueOrder(correctInput,
-                    new CaesarMachine(gameObject.AddComponent<TextTyperScript>()
-                        .GetTextParagraphs(orderFilePath)[0]), numOfOrder);
+                    new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0],
+                        maxPossibleShift, false, 1), numOfOrder);
                 var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
                 var bugSolver = orderScript.bugSolver;
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
@@ -99,7 +97,9 @@ namespace Orders
 
                 // Reset some fields and start again
                 var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
-                var caesarMachine = new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0]);
+                var caesarMachine =
+                    new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0],
+                        maxPossibleShift, false, 1);
                 orderScript.InitBug(caesarMachine);
                 var bug1 = orderScript.Bug1;
                 var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug1.IntervalBegin);

@@ -1,6 +1,16 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Dynamic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.IO;
+using MachinesScripts;
 
 namespace MachinesScripts
 {
@@ -12,39 +22,47 @@ namespace MachinesScripts
         public readonly Dictionary<int, char> CaesarAlphabetCapitalLetters;
         public readonly Dictionary<int, char> CaesarAlphabetLowercaseLetters;
         public readonly int Shift;
-
-        public CaesarAlphabet()
+        public readonly int MaxPossibleShift;
+        public readonly int MinPossibleShift;
+        /// <summary>
+        /// Алфавит Цезаря конструктор. Если задается сдвиг в лево, то задается и минимальный символ
+        /// </summary>
+        /// <param name="maxPossibleShift">Максимально возможнный сдвиг в право</param>
+        /// <param name="isMayBeShiftInLeft">Возможен ли сдвиг в лево</param>
+        /// <param name="minPossibleShift">Если сдвиг в лево возможен, то задается насколько в лево</param>
+        public CaesarAlphabet(int maxPossibleShift,  bool isMayBeShiftInLeft, int minPossibleShift=1)
         {
+            var greatAndFuriousRandom = new Random();
             CaesarAlphabetLowercaseLetters = new Dictionary<int, char>(33);
             CaesarAlphabetCapitalLetters = new Dictionary<int, char>(33);
-            Shift = new Random().Next(2, 10);
+            MaxPossibleShift = maxPossibleShift;
+            MinPossibleShift = minPossibleShift;
+            Shift = greatAndFuriousRandom.Next(1,MaxPossibleShift);
+            if (isMayBeShiftInLeft)
+                if (greatAndFuriousRandom.Next(0, 1) == 0)
+                    Shift = greatAndFuriousRandom.Next(minPossibleShift,-1);
             FillAlphabet();
-        }
-
-        private void FillAlphabet()
-        {
-            FillAlphabet('а', 'я');
-            FillAlphabet('А', 'Я');
         }
         /// <summary>
         /// Создаем Алфавит Цезаря для зашифрованных букв от Begin до End включительно
         /// </summary>
         /// <param name="begin">Первая буква</param>
         /// <param name="end">Последняя буква</param>
-        private void FillAlphabet(char begin,char end)
+        private void FillAlphabet()
         {
-            var counter = 1;
-            for (var letter = begin; letter <= end; letter++,counter++)
+            var rusLower = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+            var rusCaptital ="АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+            for (int letter = 0, counter = 0; letter <= 32; letter++,counter++)
             {
-                var newSymbol = (char)(letter + Shift);
-                if (newSymbol > end)
-                    newSymbol = (char)(newSymbol - end + begin-1);
-                else if (newSymbol < begin)
-                    newSymbol = (char)(end-(begin-newSymbol));
-                if (char.IsUpper(begin))
-                    CaesarAlphabetCapitalLetters.Add(counter, newSymbol);
-                else
-                    CaesarAlphabetLowercaseLetters.Add(counter, newSymbol);
+                var newSymbol = letter + Shift;
+                newSymbol = newSymbol switch
+                {
+                    > 32 => newSymbol - 33,
+                    < 0 => 32 - newSymbol-1,
+                    _ => newSymbol
+                };
+                CaesarAlphabetCapitalLetters.Add(counter, rusCaptital[newSymbol]);
+                CaesarAlphabetLowercaseLetters.Add(counter, rusLower[newSymbol]);
             }
         }
     }
@@ -58,13 +76,11 @@ namespace MachinesScripts
         public readonly string EncodedFile;
         public readonly CaesarAlphabet CaesarAlphabet;
         
-        public CaesarMachine(string file)
+        public CaesarMachine(string file, int maxPossibleShift, bool isMayBeShiftInLeft,int minPossibleShift)
         {
             UncodedFile = file;
-            CaesarAlphabet = new CaesarAlphabet();
+            CaesarAlphabet = new CaesarAlphabet(maxPossibleShift,isMayBeShiftInLeft,minPossibleShift);
             EncodedFile = CodeThisFile(CaesarAlphabet);
-
-
         }
         /// <summary>
         /// Кодируем файл
@@ -75,64 +91,91 @@ namespace MachinesScripts
         {
             var madeText = new StringBuilder();
             foreach (var symbol in UncodedFile)
-            {
-                if (char.IsLetter(symbol))
-                    madeText.Append(CipherLetter(symbol));
-                else
-                    madeText.Append(symbol);
-            }
-
+                madeText.Append(char.IsLetter(symbol) ? CipherLetter(symbol) : symbol);
             return madeText.ToString();
         }
-        
-
         private char CipherLetter(char letter)
         {
-            return char.IsUpper(letter) ? CaesarAlphabet.CaesarAlphabetCapitalLetters[letter - 'А'+1] 
-                : CaesarAlphabet.CaesarAlphabetLowercaseLetters[letter - 'а'+1];
+            var rusLower = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+            var rusCaptital ="АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+            if (char.IsUpper(letter))
+            {
+                var symbol  = rusCaptital.IndexOf(letter);
+                return CaesarAlphabet.CaesarAlphabetCapitalLetters[symbol];
+            }
+            else
+            {
+                var symbol  = rusLower.IndexOf(letter);
+                return CaesarAlphabet.CaesarAlphabetLowercaseLetters[symbol];
+            }
         }
-        
     }
     /// <summary>
-    /// Реализация Первого Бага
+    /// Реализация Бага
     /// </summary>
-    public class SymbolAutoRegistrationError
+    public class BugCreator
     {
         public readonly int CountCipherSymbol;
         public readonly string EncryptedPieceText;
         public readonly string UnencryptedPieceText;
+        public readonly int Shift;
+        public readonly char MostPopularLetterInText;
         public readonly int IntervalBegin;
-        public SymbolAutoRegistrationError(CaesarMachine caesarMachine)
+        public readonly int MaxPossibleSymbolToChiper;
+        public BugCreator(CaesarMachine caesarMachine)
         {
+            //Второй баг
+            MostPopularLetterInText=caesarMachine.CaesarAlphabet.CaesarAlphabetCapitalLetters[15];
+            Shift = caesarMachine.CaesarAlphabet.Shift;
+            //Первый баг
             var greatAndFuriousRandom = new Random();
-            CountCipherSymbol = greatAndFuriousRandom.Next(15, 25);
-            IntervalBegin = greatAndFuriousRandom.Next(0, caesarMachine.EncodedFile.Length - CountCipherSymbol);
+            IntervalBegin = greatAndFuriousRandom.Next(caesarMachine.EncodedFile.Length / 4,
+                caesarMachine.EncodedFile.Length / 2);
+            for (var i = IntervalBegin; i < caesarMachine.EncodedFile.Length / 2; i++)
+            {
+                if (char.IsLetter(caesarMachine.EncodedFile[i]) || char.IsNumber(caesarMachine.EncodedFile[i]))
+                {
+                    IntervalBegin = i;
+                    break;
+                }
+            }
+            MaxPossibleSymbolToChiper = greatAndFuriousRandom.Next(10, 15);
+            CountCipherSymbol = 0;
+            for (var i = IntervalBegin; i < caesarMachine.EncodedFile.Length-1; i++)
+            {
+                if (CountCipherSymbol >= MaxPossibleSymbolToChiper)
+                    if (char.IsLetter(caesarMachine.EncodedFile[i]) || char.IsNumber(caesarMachine.EncodedFile[i]))
+                    {
+                        CountCipherSymbol++;
+                        break;
+                    }
+                if (char.IsLetter(caesarMachine.EncodedFile[i]) 
+                    || char.IsPunctuation(caesarMachine.EncodedFile[i]) 
+                    || char.IsNumber(caesarMachine.EncodedFile[i]) 
+                    || caesarMachine.EncodedFile[i] == ' ') 
+                    CountCipherSymbol++;
+                else
+                    IntervalBegin = i+1;
+            }
             if (caesarMachine.UncodedFile[IntervalBegin + CountCipherSymbol] == ' ')
                 CountCipherSymbol--;
             EncryptedPieceText = caesarMachine.EncodedFile.Substring(IntervalBegin, CountCipherSymbol);
             UnencryptedPieceText = caesarMachine.UncodedFile.Substring(IntervalBegin, CountCipherSymbol);
         }
     }
-    /// <summary>
-    /// Реализация Второго Бага
-    /// </summary>
-    public class SystemOverloadError
+}
+
+/*class Programm
+{
+    public static void Main()
     {
-        public readonly string EncodedText;
-        public readonly string UncodedText;
-        public readonly int Shift;
-        public readonly char MostPopularLetterInText;
-        public readonly int IntervalBegin;
-        public readonly int CountCipherSymbol;
-        public SystemOverloadError(CaesarMachine caesarMachine)
+        StreamReader reader = new StreamReader(@"C:\Users\zeibo\Downloads\hh.txt");
+        var text = reader.ReadToEnd();
+        var CesMash = new CaesarMachine(text,1,false,-1);
+        var ttt =CesMash.EncodedFile;
+        for (var i = 0; i < 10; i++)
         {
-            var greatAndFuriousRandom = new Random();
-            MostPopularLetterInText= caesarMachine.CaesarAlphabet.CaesarAlphabetCapitalLetters[15];
-            CountCipherSymbol = greatAndFuriousRandom.Next(20, 35);
-            IntervalBegin = greatAndFuriousRandom.Next(0, caesarMachine.EncodedFile.Length - CountCipherSymbol);
-            EncodedText = caesarMachine.EncodedFile.Substring(IntervalBegin, CountCipherSymbol);
-            UncodedText = caesarMachine.UncodedFile.Substring(IntervalBegin, CountCipherSymbol);
-            Shift = caesarMachine.CaesarAlphabet.Shift;
+            var bug1 = new BugCreator(CesMash);
         }
     }
-}
+}*/

@@ -1970,6 +1970,7 @@ MonoBehaviour:
   - {fileID: 1153583144}
   encryptionMachineTextUI: {fileID: 225509327}
   countOfOrders: 3
+  maxPossibleShift: 2
 --- !u!1 &740485831
 GameObject:
   m_ObjectHideFlags: 0

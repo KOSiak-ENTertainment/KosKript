@@ -12,13 +12,13 @@ namespace Orders
         private string[] _orderText;
         public GameObject submitOrder;
 
-        public SymbolAutoRegistrationError Bug1 { get; private set; }
+        public BugCreator Bug1 { get; private set; }
 
         public string[] GetOrderText() => _orderText; //TODO Использовать этот метод
         
         public void InitBug(CaesarMachine caesarMachine)
         {
-            Bug1 = new SymbolAutoRegistrationError(caesarMachine);
+            Bug1 = new BugCreator(caesarMachine);
         }
     }
 }
