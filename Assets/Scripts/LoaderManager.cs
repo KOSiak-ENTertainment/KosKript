@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,23 +7,24 @@ public class LoaderManager : MonoBehaviour
     public Slider progressBar; // Ссылка на компонент полоски прогресса в Unity Editor
     public Text loadingText; // Ссылка на компонент текста в Unity Editor
 
-    private bool isLoading = false;
+    private bool _isLoading;
 
-    private void Start()
+    public void Start()
     {
-        progressBar.gameObject.SetActive(false); // Скрыть полоску прогресса при старте
+        gameObject.SetActive(false);
     }
 
     public void OnButtonClick()
     {
-        if (!isLoading)
-        {
-            isLoading = true;
-            progressBar.value = 0; // Сбросить значение полоски прогресса в начало
-            loadingText.text = "Loading..."; // Установить начальный текст
+        gameObject.SetActive(true);
+        if (_isLoading) 
+            return;
+        
+        _isLoading = true;
+        progressBar.value = 0; // Сбросить значение полоски прогресса в начало
+        loadingText.text = "Заказ загружается..."; // Установить начальный текст
 
-            StartCoroutine(LoadData()); // Запустить процесс загрузки данных в корутине
-        }
+        StartCoroutine(LoadData()); // Запустить процесс загрузки данных в корутине
     }
 
     private System.Collections.IEnumerator LoadData()
@@ -34,8 +36,8 @@ public class LoaderManager : MonoBehaviour
             yield return null;
         }
 
-        loadingText.text = "Loading Complete"; // Установить текст по завершении загрузки
-        isLoading = false;
+        loadingText.text = "Заказ загружен!"; // Установить текст по завершении загрузки
+        _isLoading = false;
         progressBar.gameObject.SetActive(false); // Скрыть полоску прогресса
     }
 }
