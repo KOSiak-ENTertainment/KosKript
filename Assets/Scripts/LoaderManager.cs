@@ -9,11 +9,6 @@ public class LoaderManager : MonoBehaviour
 
     private bool _isLoading;
 
-    public void Start()
-    {
-        gameObject.SetActive(false);
-    }
-
     public void OnButtonClick()
     {
         gameObject.SetActive(true);

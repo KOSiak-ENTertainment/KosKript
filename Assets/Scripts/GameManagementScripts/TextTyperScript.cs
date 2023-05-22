@@ -21,5 +21,15 @@ namespace GameManagementScripts
 
             return paragraphs;
         }
+        
+        public string ReadTextFile(string filePath)
+        {
+            var path = Path.Combine(Application.dataPath, filePath);
+            if (File.Exists(path)) 
+                return File.ReadAllText(path);
+
+            Debug.LogError("File not found: " + filePath);
+            return null;
+        }
     }
 }
