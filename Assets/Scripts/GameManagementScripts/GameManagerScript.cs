@@ -11,10 +11,14 @@ using UnityEngine.Serialization;
 namespace GameManagementScripts
 {
     public class GameManagerScript : MonoBehaviour
-    { 
+    {
+        public Text solvedOrdersCounter;
         public OrdersManager ordersManager;
         public DialogManagerScript dialogManager;
         public GameStates gameState = GameStates.NothingToDo;
+        public OrderLoading ordersState = OrderLoading.WithoutOrders;
+        public int countOfSolvedOrders = 0;
+        public List<Button> orderButtons;
 
         public enum GameStates
         {
@@ -27,19 +31,29 @@ namespace GameManagementScripts
             NothingToDo
         }
 
+        public enum OrderLoading
+        {
+            FirstOrderLoaded,
+            SecondOrderLoaded,
+            WithoutOrders
+        }
+
         public void Start()
         {
+            orderButtons[0].gameObject.SetActive(true);
             dialogManager.Start();
             dialogManager.ShowFirstCustomerDialogs();
-            ordersManager.SolveFirstOrder();
         }
 
         public void Update()
         {
+            ManageOrderState();
+            
             if (gameState == GameStates.SecondOrder)
             {
+                orderButtons[1].gameObject.SetActive(true);
+                UpdateMaxPossibleShift();
                 dialogManager.ShowSecondCustomerDialogs();
-                ordersManager.SolveSecondOrder();
                 gameState = GameStates.NothingToDo;
             }
             
@@ -49,6 +63,23 @@ namespace GameManagementScripts
                 gameState = GameStates.NothingToDo;
             }
         }
+
+        private void ManageOrderState()
+        {
+            if (ordersState == OrderLoading.FirstOrderLoaded)
+            {
+                ordersManager.SolveFirstOrder();
+                ordersState = OrderLoading.WithoutOrders;
+            }
+            
+            if (ordersState == OrderLoading.SecondOrderLoaded)
+            {
+                ordersManager.SolveSecondOrder();
+                ordersState = OrderLoading.WithoutOrders;
+            }
+        }
+        
+        private void UpdateMaxPossibleShift() => ordersManager.maxPossibleShift += 2;
         
         private IEnumerator WaitForSeconds(int countOfSeconds)
         {

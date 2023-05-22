@@ -1,5 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using GameManagementScripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Documents
@@ -8,15 +12,18 @@ namespace Documents
     {
         public Text documentText; 
         public Button[] appButtons;
-        private string[] _machinesDocs;
-        
-        private void Start()
+        private List<string> _machinesDocs;
+
+        public void Start()
         {
             var textTyperScript = gameObject.AddComponent<TextTyperScript>();
-            _machinesDocs = new string[3];
-
-            _machinesDocs[0] = textTyperScript.ReadTextFile("Documents/CaesarDocs.txt");
-            _machinesDocs[1] = textTyperScript.ReadTextFile("Documents/VigenereDocs.txt");
+            
+            _machinesDocs = new List<string>
+            {
+                textTyperScript.ReadTextFile("Documents/CaesarDocs.txt"),
+                textTyperScript.ReadTextFile("Documents/VigenereDocs.txt"),
+                "Вы ещё не начали ни одного заказа?"
+            };
             
             for (var i = 0; i < appButtons.Length; i++)
             {
@@ -24,6 +31,8 @@ namespace Documents
                 appButtons[i].onClick.AddListener(() => { ShowCanvas(index); });
             }
         }
+
+        public void ChangeCurrentOrderText(string text) => _machinesDocs[2] = text;
 
         private void ShowCanvas(int indexToShow)
         {

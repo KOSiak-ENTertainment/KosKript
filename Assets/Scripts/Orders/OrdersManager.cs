@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Documents;
 using GameManagementScripts;
 using MachinesScripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Orders
@@ -13,6 +15,7 @@ namespace Orders
         public Text encryptionMachineTextUI;
         public int countOfOrders = 3;
         public int maxPossibleShift = 2;
+        public GameObject documentsButtonsManager;
 
         public void SolveFirstOrder() => SolveOrder(1, "Orders/ArchieRochesterOrder.txt");
         
@@ -23,6 +26,8 @@ namespace Orders
             var firstOrderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
             if (gameObject == null) 
                 return;
+            var doc = documentsButtonsManager.GetComponent<DocumentsButtonsManager>();
+            doc.ChangeCurrentOrderText(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0]);
 
             var caesarMachine =
                 new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0],
@@ -97,6 +102,9 @@ namespace Orders
 
                 // Reset some fields and start again
                 var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+                var doc = documentsButtonsManager.GetComponent<DocumentsButtonsManager>();
+            
+                doc.ChangeCurrentOrderText(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0]);
                 var caesarMachine =
                     new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0],
                         maxPossibleShift, false, 1);
@@ -109,8 +117,9 @@ namespace Orders
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);
                 inputField.text = bug1.EncryptedPieceText;
-        
-                bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\" со сдвигом: " + caesarMachine.CaesarAlphabet.Shift;
+
+                bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\" со сдвигом: " +
+                                  caesarMachine.CaesarAlphabet.Shift;
 
                 yield return StartCoroutine(WaitForInputAndValidate(inputField, bug1.EncryptedPieceText, 3,
                     orderScript.submitOrder, numOfOrder, orderFilePath));

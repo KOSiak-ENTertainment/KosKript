@@ -1,4 +1,4 @@
-using System;
+using GameManagementScripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +11,13 @@ public class LoaderManager : MonoBehaviour
 
     public void OnButtonClick()
     {
+        var gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         gameObject.SetActive(true);
+
+        if (gameManager.countOfSolvedOrders == 0)
+            gameManager.ordersState = GameManagerScript.OrderLoading.FirstOrderLoaded;
+        if (gameManager.countOfSolvedOrders == 1)
+            gameManager.ordersState = GameManagerScript.OrderLoading.SecondOrderLoaded;
         if (_isLoading) 
             return;
         

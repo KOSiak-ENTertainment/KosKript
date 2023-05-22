@@ -11,21 +11,12 @@ namespace DialogManager
         public Button submitOrderButton;
         private TextTyperScript _textTyperScript;
 
-        public void Start()
-        {
-            _textTyperScript = gameObject.AddComponent<TextTyperScript>();
-        }
+        public void Start() => _textTyperScript = gameObject.AddComponent<TextTyperScript>();
 
-        public void ShowFirstCustomerDialogs()
-        {
-            ShowDialog("Dialogs/ArchieRochesterDialog.txt", true);
-        }
+        public void ShowFirstCustomerDialogs() => ShowDialog("Dialogs/ArchieRochesterDialog.txt", true);
 
-        public void ShowSecondCustomerDialogs()
-        {
-            ShowDialog("Dialogs/KolesnikovaTamaraDialog.txt", false);
-        }
-        
+        public void ShowSecondCustomerDialogs() => ShowDialog("Dialogs/KolesnikovaTamaraDialog.txt", false);
+
         private void ShowDialog(string dialogPath, bool isThereGratitude)
         {
             var dialogParagraphs = _textTyperScript.GetTextParagraphs(dialogPath); 
