@@ -32,7 +32,11 @@ namespace Documents
             }
         }
 
-        public void ChangeCurrentOrderText(string text) => _machinesDocs[2] = text;
+        public void ChangeCurrentOrderText(string text)
+        {
+            _machinesDocs[2] = text;
+            documentText.text = text;
+        }
 
         private void ShowCanvas(int indexToShow)
         {

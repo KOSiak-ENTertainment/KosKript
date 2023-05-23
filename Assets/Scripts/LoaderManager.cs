@@ -13,6 +13,7 @@ public class LoaderManager : MonoBehaviour
     {
         var gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         gameObject.SetActive(true);
+        progressBar.gameObject.SetActive(true); 
 
         if (gameManager.countOfSolvedOrders == 0)
             gameManager.ordersState = GameManagerScript.OrderLoading.FirstOrderLoaded;
