@@ -94,7 +94,7 @@ namespace Orders
                 var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
                 var bugSolver = orderScript.bugSolver;
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
-                bugWarning.text = "Шифорвка выполнена успешно!";
+                bugWarning.text = "Шифорвка выполнена успешно! Вы можете начать новый заказ!";
             }
             else
             {

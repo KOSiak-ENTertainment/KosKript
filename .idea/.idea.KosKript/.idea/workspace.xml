@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Documents/DocumentsButtonsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Documents/DocumentsButtonsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/GameManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/GameManagerScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoaderManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoaderManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/SubmitOrderButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/SubmitOrderButtonScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "addingDocumentsManagment",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -153,6 +150,8 @@
       <workItem from="1683707211646" duration="275000" />
       <workItem from="1684158965536" duration="3747000" />
       <workItem from="1684164341288" duration="179000" />
+      <workItem from="1684830605949" duration="5311000" />
+      <workItem from="1684999195150" duration="1037000" />
     </task>
     <servers />
   </component>

@@ -22,7 +22,7 @@ namespace Documents
             {
                 textTyperScript.ReadTextFile("Documents/CaesarDocs.txt"),
                 textTyperScript.ReadTextFile("Documents/VigenereDocs.txt"),
-                "Вы ещё не начали ни одного заказа?"
+                "Вы ещё не начали ни одного заказа!"
             };
             
             for (var i = 0; i < appButtons.Length; i++)
