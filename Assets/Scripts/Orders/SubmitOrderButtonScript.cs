@@ -24,7 +24,8 @@ public class SubmitOrderButtonScript : MonoBehaviour
             dialogManager.orderText.text = thanks;
             thanks = null;
         }
-
+        
+        gameManager.HighlightOrdersButton();
         await WaitAndChangeGameState(gameManager, (GameManagerScript.GameStates)numOfOrder);
     }
     
