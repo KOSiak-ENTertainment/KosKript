@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HintsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HintsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/GameManagerScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HighlightButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HintsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoaderManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -45,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "addingHints",
+    "git-widget-placeholder": "addingButtonsHighlighting",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -149,7 +151,8 @@
       <workItem from="1684158965536" duration="3747000" />
       <workItem from="1684164341288" duration="179000" />
       <workItem from="1684830605949" duration="5311000" />
-      <workItem from="1684999195150" duration="6743000" />
+      <workItem from="1684999195150" duration="8314000" />
+      <workItem from="1685409180494" duration="3865000" />
     </task>
     <servers />
   </component>
