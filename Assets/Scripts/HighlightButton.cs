@@ -5,7 +5,6 @@ public class HighlightButton : MonoBehaviour
 {
     private Button button;
     private Color defaultColor;
-    private bool isColorChanged = false;
 
     private void Start()
     {
