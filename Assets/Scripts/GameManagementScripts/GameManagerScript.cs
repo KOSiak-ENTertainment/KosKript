@@ -19,6 +19,7 @@ namespace GameManagementScripts
         public OrderLoading ordersState = OrderLoading.WithoutOrders;
         public int countOfSolvedOrders = 0;
         public List<Button> orderButtons;
+        public List<Button> taskbarButtons;
 
         public enum GameStates
         {
@@ -52,14 +53,17 @@ namespace GameManagementScripts
             if (gameState == GameStates.SecondOrder)
             {
                 orderButtons[1].gameObject.SetActive(true);
+                
                 UpdateMaxPossibleShift();
                 dialogManager.ShowSecondCustomerDialogs();
+                HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
             
             if (gameState == GameStates.ThirdOrder)
             {
                 Debug.Log("FUSKDJFLSKDJFSLDKFJSDLFK!!!!!");
+                //HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
         }
@@ -69,12 +73,14 @@ namespace GameManagementScripts
             if (ordersState == OrderLoading.FirstOrderLoaded)
             {
                 ordersManager.SolveFirstOrder();
+                MakeSolveOrderHints();
                 ordersState = OrderLoading.WithoutOrders;
             }
             
             if (ordersState == OrderLoading.SecondOrderLoaded)
             {
                 ordersManager.SolveSecondOrder();
+                MakeSolveOrderHints();
                 ordersState = OrderLoading.WithoutOrders;
             }
         }
@@ -85,5 +91,17 @@ namespace GameManagementScripts
         {
             yield return new WaitForSeconds(countOfSeconds);
         }
+
+        private void MakeSolveOrderHints()
+        {
+            HighlightEncryptionMachinesButton();
+            HighlightDocumentsButton();
+        }
+        
+        private void HighlightEncryptionMachinesButton() => taskbarButtons[2].GetComponent<HighlightButton>().ChangeButtonColor();
+        
+        private void HighlightDocumentsButton() => taskbarButtons[0].GetComponent<HighlightButton>().ChangeButtonColor();
+        
+        private void HighlightOrdersButton() => taskbarButtons[1].GetComponent<HighlightButton>().ChangeButtonColor();
     }
 }

@@ -15,11 +15,11 @@ public class Tooltip : MonoBehaviour
     public void ShowHint(string hintMessage)
     {
         hintPanel.SetActive(true);
-        Text hintText = hintPanel.GetComponentInChildren<Text>();
+        var hintText = hintPanel.GetComponentInChildren<Text>();
         hintText.text = hintMessage;
     }
 
-    public void CloseHint()
+    private void CloseHint()
     {
         hintPanel.SetActive(false);
     }

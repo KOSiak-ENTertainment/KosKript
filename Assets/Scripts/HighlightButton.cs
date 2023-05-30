@@ -3,34 +3,17 @@ using UnityEngine.UI;
 
 public class HighlightButton : MonoBehaviour
 {
-    public Button button;
-    private Color originalColor;
-    private float highlightStartTime;
+    private Button button;
+    private Color defaultColor;
+    private bool isColorChanged = false;
 
     private void Start()
     {
-        button = GetComponent<Button>();
-        originalColor = button.colors.normalColor;
+        button = gameObject.GetComponent<Button>();
+        defaultColor = button.colors.normalColor;
     }
 
-    private void Update()
-    {
-        // Проверяем, прошло ли достаточное время для подсветки кнопки
-        if (Time.time - highlightStartTime >= 1.0f)
-        {
-            // Возвращаем оригинальный цвет кнопки
-            ColorBlock colors = button.colors;
-            colors.normalColor = originalColor;
-            button.colors = colors;
-        }
-    }
+    public void ChangeButtonColor() => button.image.color = Color.red;
 
-    public void HighlightButtons()
-    {
-        // Запоминаем время начала подсветки и устанавливаем новый цвет кнопки
-        highlightStartTime = Time.time;
-        ColorBlock colors = button.colors;
-        colors.normalColor = Color.red;
-        button.colors = colors;
-    }
+    public void ChangeButtonToDefaultColor() => button.image.color = defaultColor;
 }
