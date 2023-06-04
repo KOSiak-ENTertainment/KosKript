@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Documents;
-using GameManagementScripts;
 using MachinesScripts;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Orders
@@ -24,35 +22,56 @@ namespace Orders
         private void SolveOrder(int numOfOrder, string orderFilePath)
         {
             var firstOrderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+            firstOrderScript.LoadOrderText();
             if (gameObject == null) 
                 return;
             var doc = documentsButtonsManager.GetComponent<DocumentsButtonsManager>();
-            doc.ChangeCurrentOrderText(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0]);
+            doc.ChangeCurrentOrderText(firstOrderScript.GetOrderText()[0]);
 
             var caesarMachine =
-                new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0],
+                new CaesarMachine(firstOrderScript.GetOrderText()[0],
                     maxPossibleShift, false, 1);
             firstOrderScript.InitBug(caesarMachine);
-            var bug1 = firstOrderScript.Bug1;
-            var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug1.IntervalBegin);
-            var bugSolver = firstOrderScript.bugSolver;
-            var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
-            var inputField = bugSolver.transform.Find("InputField").GetComponent<InputField>();
+            var bug = firstOrderScript.Bug;
+            var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug.IntervalBegin);
+            var bugSolver = firstOrderScript.RandomlySelectBugSolver();
+            if (bugSolver.name == "FirstBugSolver")
+            {
+                var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
+                var inputField = bugSolver.transform.Find("InputField").GetComponent<InputField>();
 
-            encryptionMachineTextUI.text = firstPartOfText;
-            bugSolver.SetActive(true);
-            inputField.text = bug1.EncryptedPieceText;
+                encryptionMachineTextUI.text = firstPartOfText;
+                bugSolver.SetActive(true);
 
-            bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\" со сдвигом: " + caesarMachine.CaesarAlphabet.Shift;
+                bugWarning.text = "Зашифруйте данную часть текста: \"" + bug.UnencryptedPieceText + "\" со сдвигом: " +
+                                  caesarMachine.CaesarAlphabet.Shift;
 
-            StartCoroutine(WaitForInputAndValidate(inputField, bug1.EncryptedPieceText, 3,
-                firstOrderScript.submitOrder, numOfOrder, orderFilePath));
+                StartCoroutine(WaitForInputAndValidate(inputField, bug.EncryptedPieceText, 3,
+                    firstOrderScript.submitOrder, numOfOrder, orderFilePath));
+            }
+            if (bugSolver.name == "SecondBugSolver")
+            {
+                var shiftInputField = bugSolver.transform.Find("ShiftInputField").GetComponent<InputField>();
+                var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
+                var mostPopularLetter = bugSolver.transform.Find("MostPopularLetter").GetComponent<Text>();
+                var popularLetterButton = bugSolver.transform.Find("GetPopularLetter").GetComponent<Button>();
+
+                encryptionMachineTextUI.text = firstPartOfText;
+                bugSolver.SetActive(true);
+
+                popularLetterButton.onClick.AddListener(() =>
+                {
+                    mostPopularLetter.text = "Самая частотная буква: " + bug.MostPopularLetterInText;
+                });
+
+                StartCoroutine(WaitForShiftInputAndValidate(shiftInputField, bug.Shift.ToString(), 3, firstOrderScript.submitOrder, numOfOrder, orderFilePath));
+            }
         }
 
         private void ContinueOrder(string userInput, CaesarMachine caesarMachine, int numOfOrder)
         {
             var firstOrderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
-            var bug1 = firstOrderScript.Bug1;
+            var bug1 = firstOrderScript.Bug;
             
             encryptionMachineTextUI.text += userInput;
             encryptionMachineTextUI.text += caesarMachine.EncodedFile.Substring(bug1.IntervalBegin + bug1.CountCipherSymbol);
@@ -88,11 +107,11 @@ namespace Orders
             {
                 Debug.Log("Input correct!");
                 submitOrder.SetActive(true);
-                ContinueOrder(correctInput,
-                    new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0],
-                        maxPossibleShift, false, 1), numOfOrder);
                 var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
-                var bugSolver = orderScript.bugSolver;
+                ContinueOrder(correctInput,
+                    new CaesarMachine(orderScript.GetOrderText()[0],
+                        maxPossibleShift, false, 1), numOfOrder);
+                var bugSolver = orderScript.firstBugSolver;
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
                 bugWarning.text = "Шифорвка выполнена успешно! Вы можете начать новый заказ!";
             }
@@ -104,19 +123,18 @@ namespace Orders
                 var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
                 var doc = documentsButtonsManager.GetComponent<DocumentsButtonsManager>();
             
-                doc.ChangeCurrentOrderText(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0]);
+                doc.ChangeCurrentOrderText(orderScript.GetOrderText()[0]);
                 var caesarMachine =
-                    new CaesarMachine(gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath)[0],
+                    new CaesarMachine(orderScript.GetOrderText()[0],
                         maxPossibleShift, false, 1);
                 orderScript.InitBug(caesarMachine);
-                var bug1 = orderScript.Bug1;
+                var bug1 = orderScript.Bug;
                 var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug1.IntervalBegin);
-                var bugSolver = orderScript.bugSolver;
+                var bugSolver = orderScript.firstBugSolver;
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
                 
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);
-                inputField.text = bug1.EncryptedPieceText;
 
                 bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\" со сдвигом: " +
                                   caesarMachine.CaesarAlphabet.Shift;
@@ -131,6 +149,81 @@ namespace Orders
             yield return new WaitForSeconds(2);
 
             Debug.Log("Some code that should run after the coroutine has finished.");
+        }
+        
+        private IEnumerator WaitForShiftInputAndValidate(InputField shiftInputField, string correctShift, int maxAttempts, GameObject submitOrder, int numOfOrder, string orderFilePath)
+        {
+            var attempts = 0;
+            var inputCorrect = false;
+
+            while (!inputCorrect && attempts < maxAttempts)
+            {
+                // Wait for user to press enter
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
+
+                if (shiftInputField.text == correctShift)
+                {
+                    // Input is correct, break out of loop
+                    inputCorrect = true;
+                    shiftInputField.text = null;
+                    Debug.Log("Shift input field cleaned");
+                }
+                else
+                {
+                    // Input is incorrect, display warning message and increment attempts
+                    attempts++;
+                    shiftInputField.text = "";
+                    Debug.Log($"Incorrect shift input. {maxAttempts - attempts} attempts left.");
+                }
+            }
+
+            if (inputCorrect)
+            {
+                Debug.Log("Shift input correct!");
+                submitOrder.SetActive(true);
+                var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+                ContinueOrder("", new CaesarMachine(orderScript.GetOrderText()[0], maxPossibleShift, false, 1), numOfOrder);
+                var bugSolver = orderScript.secondBugSolver;
+                var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
+                bugWarning.text = "Шифровка выполнена успешно! Вы можете начать новый заказ!";
+            }
+            else
+            {
+                Debug.Log("Out of shift input attempts.");
+
+                // Reset some fields and start again
+                var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+                var doc = documentsButtonsManager.GetComponent<DocumentsButtonsManager>();
+
+                doc.ChangeCurrentOrderText(orderScript.GetOrderText()[0]);
+                var caesarMachine = new CaesarMachine(orderScript.GetOrderText()[0], maxPossibleShift, false, 1);
+                orderScript.InitBug(caesarMachine);
+                var bug2 = orderScript.Bug;
+                var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug2.IntervalBegin);
+                var bugSolver = orderScript.secondBugSolver;
+                var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
+                var mostPopularLetter = bugSolver.transform.Find("MostPopularLetter").GetComponent<Text>();
+                var popularLetterButton = bugSolver.transform.Find("GetPopularLetter").GetComponent<Button>();
+
+                encryptionMachineTextUI.text = firstPartOfText;
+                bugSolver.SetActive(true);
+                
+                mostPopularLetter.text = "Самая частотная буква: ";
+
+                popularLetterButton.onClick.AddListener(() =>
+                {
+                    mostPopularLetter.text = "Самая частотная буква: " + bug2.MostPopularLetterInText;
+                });
+
+                yield return StartCoroutine(WaitForShiftInputAndValidate(shiftInputField, correctShift, 2, orderScript.submitOrder, numOfOrder, orderFilePath));
+            }
+
+            Debug.Log("Shift input coroutine finished!");
+
+            // Wait for 2 seconds before executing the code below
+            yield return new WaitForSeconds(2);
+
+            Debug.Log("Some code that should run after the shift input coroutine has finished.");
         }
     }
 }
