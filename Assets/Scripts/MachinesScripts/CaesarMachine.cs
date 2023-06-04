@@ -164,18 +164,3 @@ namespace MachinesScripts
         }
     }
 }
-
-/*class Programm
-{
-    public static void Main()
-    {
-        StreamReader reader = new StreamReader(@"C:\Users\zeibo\Downloads\hh.txt");
-        var text = reader.ReadToEnd();
-        var CesMash = new CaesarMachine(text,1,false,-1);
-        var ttt =CesMash.EncodedFile;
-        for (var i = 0; i < 10; i++)
-        {
-            var bug1 = new BugCreator(CesMash);
-        }
-    }
-}*/
