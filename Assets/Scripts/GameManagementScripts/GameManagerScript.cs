@@ -17,7 +17,7 @@ namespace GameManagementScripts
         public DialogManagerScript dialogManager;
         public GameStates gameState = GameStates.NothingToDo;
         public OrderLoading ordersState = OrderLoading.WithoutOrders;
-        public int countOfSolvedOrders = 0;
+        public int countOfSolvedOrders;
         public List<Button> orderButtons;
         public List<Button> taskbarButtons;
 
@@ -36,6 +36,7 @@ namespace GameManagementScripts
         {
             FirstOrderLoaded,
             SecondOrderLoaded,
+            ThirdOrderLoaded,
             WithoutOrders
         }
 
@@ -61,9 +62,12 @@ namespace GameManagementScripts
             }
             
             if (gameState == GameStates.ThirdOrder)
-            {
-                Debug.Log("FUSKDJFLSKDJFSLDKFJSDLFK!!!!!");
-                //HighlightOrdersButton();
+            { 
+                orderButtons[2].gameObject.SetActive(true);
+                
+                UpdateMaxPossibleShift();
+                dialogManager.ShowThirdCustomerDialogs();
+                HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
         }
@@ -76,10 +80,15 @@ namespace GameManagementScripts
                 MakeSolveOrderHints();
                 ordersState = OrderLoading.WithoutOrders;
             }
-            
             if (ordersState == OrderLoading.SecondOrderLoaded)
             {
                 ordersManager.SolveSecondOrder();
+                MakeSolveOrderHints();
+                ordersState = OrderLoading.WithoutOrders;
+            }
+            if (ordersState == OrderLoading.ThirdOrderLoaded)
+            {
+                ordersManager.SolveThirdOrder();
                 MakeSolveOrderHints();
                 ordersState = OrderLoading.WithoutOrders;
             }

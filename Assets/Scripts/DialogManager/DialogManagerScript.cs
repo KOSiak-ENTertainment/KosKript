@@ -15,8 +15,10 @@ namespace DialogManager
 
         public void ShowFirstCustomerDialogs() => ShowDialog("Dialogs/ArchieRochesterDialog.txt", true);
 
-        public void ShowSecondCustomerDialogs() => ShowDialog("Dialogs/KolesnikovaTamaraDialog.txt", false);
-
+        public void ShowSecondCustomerDialogs() => ShowDialog("Dialogs/KolesnikovaTamaraDialog.txt", true);
+        
+        public void ShowThirdCustomerDialogs() => ShowDialog("Dialogs/SolmatovaEkaterinaDialog.txt", false);
+        
         private void ShowDialog(string dialogPath, bool isThereGratitude)
         {
             var dialogParagraphs = _textTyperScript.GetTextParagraphs(dialogPath); 

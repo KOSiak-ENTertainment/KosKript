@@ -19,6 +19,8 @@ public class LoaderManager : MonoBehaviour
             gameManager.ordersState = GameManagerScript.OrderLoading.FirstOrderLoaded;
         if (gameManager.countOfSolvedOrders == 1)
             gameManager.ordersState = GameManagerScript.OrderLoading.SecondOrderLoaded;
+        if (gameManager.countOfSolvedOrders == 2)
+            gameManager.ordersState = GameManagerScript.OrderLoading.ThirdOrderLoaded;
         if (_isLoading) 
             return;
         

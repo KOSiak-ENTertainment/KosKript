@@ -11,30 +11,32 @@ namespace Orders
     {
         public List<GameObject> orders;
         public Text encryptionMachineTextUI;
-        public int countOfOrders = 3;
+        public int countOfOrders = 4;
         public int maxPossibleShift = 2;
         public GameObject documentsButtonsManager;
 
         public void SolveFirstOrder() => SolveOrder(1, "Orders/ArchieRochesterOrder.txt");
         
         public void SolveSecondOrder() => SolveOrder(2, "Orders/KolesnikovaTamaraOrder.txt");
+        
+        public void SolveThirdOrder() => SolveOrder(3, "Orders/SolmatovaEkaterinaOrder.txt");
 
         private void SolveOrder(int numOfOrder, string orderFilePath)
         {
-            var firstOrderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
-            firstOrderScript.LoadOrderText();
+            var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+            orderScript.LoadOrderText();
             if (gameObject == null) 
                 return;
             var doc = documentsButtonsManager.GetComponent<DocumentsButtonsManager>();
-            doc.ChangeCurrentOrderText(firstOrderScript.GetOrderText()[0]);
+            doc.ChangeCurrentOrderText(orderScript.GetOrderText()[0]);
 
             var caesarMachine =
-                new CaesarMachine(firstOrderScript.GetOrderText()[0],
+                new CaesarMachine(orderScript.GetOrderText()[0],
                     maxPossibleShift, false, 1);
-            firstOrderScript.InitBug(caesarMachine);
-            var bug = firstOrderScript.Bug;
+            orderScript.InitBug(caesarMachine);
+            var bug = orderScript.Bug;
             var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug.IntervalBegin);
-            var bugSolver = firstOrderScript.RandomlySelectBugSolver();
+            var bugSolver = orderScript.RandomlySelectBugSolver();
             if (bugSolver.name == "FirstBugSolver")
             {
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
@@ -47,7 +49,7 @@ namespace Orders
                                   caesarMachine.CaesarAlphabet.Shift;
 
                 StartCoroutine(WaitForInputAndValidate(inputField, bug.EncryptedPieceText, 3,
-                    firstOrderScript.submitOrder, numOfOrder, orderFilePath));
+                    orderScript.submitOrder, numOfOrder, orderFilePath));
             }
             if (bugSolver.name == "SecondBugSolver")
             {
@@ -64,7 +66,7 @@ namespace Orders
                     mostPopularLetter.text = "Самая частотная буква: " + bug.MostPopularLetterInText;
                 });
 
-                StartCoroutine(WaitForShiftInputAndValidate(shiftInputField, bug.Shift.ToString(), 3, firstOrderScript.submitOrder, numOfOrder, orderFilePath));
+                StartCoroutine(WaitForShiftInputAndValidate(shiftInputField, bug.Shift.ToString(), 3, orderScript.submitOrder, numOfOrder, orderFilePath));
             }
         }
 
@@ -114,6 +116,7 @@ namespace Orders
                 var bugSolver = orderScript.firstBugSolver;
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
                 bugWarning.text = "Шифорвка выполнена успешно! Вы можете начать новый заказ!";
+                bugSolver.SetActive(false);
             }
             else
             {
@@ -185,7 +188,8 @@ namespace Orders
                 ContinueOrder("", new CaesarMachine(orderScript.GetOrderText()[0], maxPossibleShift, false, 1), numOfOrder);
                 var bugSolver = orderScript.secondBugSolver;
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
-                bugWarning.text = "Шифровка выполнена успешно! Вы можете начать новый заказ!";
+                //bugWarning.text = "Шифровка выполнена успешно! Вы можете начать новый заказ!";
+                bugSolver.SetActive(false);
             }
             else
             {
@@ -204,6 +208,7 @@ namespace Orders
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
                 var mostPopularLetter = bugSolver.transform.Find("MostPopularLetter").GetComponent<Text>();
                 var popularLetterButton = bugSolver.transform.Find("GetPopularLetter").GetComponent<Button>();
+                bugWarning.text = "Определите сдвиг:";
 
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);

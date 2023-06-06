@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/KolesnikovaTamaraDialog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dialogs/KolesnikovaTamaraDialog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/GameManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/GameManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoaderManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoaderManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/CaesarOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/CaesarOrder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" afterDir="false" />
     </list>
@@ -157,7 +161,8 @@
       <workItem from="1684999195150" duration="8314000" />
       <workItem from="1685409180494" duration="13352000" />
       <workItem from="1685439536750" duration="136000" />
-      <workItem from="1685840107789" duration="13559000" />
+      <workItem from="1685840107789" duration="14872000" />
+      <workItem from="1686040391724" duration="4228000" />
     </task>
     <servers />
   </component>
