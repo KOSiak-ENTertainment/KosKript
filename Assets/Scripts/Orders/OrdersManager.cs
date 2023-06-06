@@ -11,7 +11,7 @@ namespace Orders
     {
         public List<GameObject> orders;
         public Text encryptionMachineTextUI;
-        public int countOfOrders = 4;
+        public int countOfOrders;
         public int maxPossibleShift = 2;
         public GameObject documentsButtonsManager;
 
@@ -20,6 +20,8 @@ namespace Orders
         public void SolveSecondOrder() => SolveOrder(2, "Orders/KolesnikovaTamaraOrder.txt");
         
         public void SolveThirdOrder() => SolveOrder(3, "Orders/SolmatovaEkaterinaOrder.txt");
+        
+        public void SolveFifthOrder() => SolveOrder(4, "Orders/PetrSanOrder.txt");
 
         private void SolveOrder(int numOfOrder, string orderFilePath)
         {
