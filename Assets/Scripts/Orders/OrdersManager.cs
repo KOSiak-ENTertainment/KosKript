@@ -15,17 +15,10 @@ namespace Orders
         public int maxPossibleShift = 2;
         public GameObject documentsButtonsManager;
 
-        public void SolveFirstOrder() => SolveOrder(1, "Orders/ArchieRochesterOrder.txt");
-        
-        public void SolveSecondOrder() => SolveOrder(2, "Orders/KolesnikovaTamaraOrder.txt");
-        
-        public void SolveThirdOrder() => SolveOrder(3, "Orders/SolmatovaEkaterinaOrder.txt");
-        
-        public void SolveFifthOrder() => SolveOrder(4, "Orders/PetrSanOrder.txt");
-
-        private void SolveOrder(int numOfOrder, string orderFilePath)
+        public void SolveOrder(int numOfOrder)
         {
             var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+            var orderFilePath = orderScript.orderFilePath;
             orderScript.LoadOrderText();
             if (gameObject == null) 
                 return;

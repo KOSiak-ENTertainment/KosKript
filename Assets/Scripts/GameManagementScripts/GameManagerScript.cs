@@ -85,29 +85,33 @@ namespace GameManagementScripts
             }
         }
 
+        private int GetCurrentOrderNumber() => countOfSolvedOrders + 1;
+
+        private void SolveOrder() => ordersManager.SolveOrder(GetCurrentOrderNumber());
+
         private void ManageOrderState()
         {
             if (ordersState == OrderLoading.FirstOrderLoaded)
             {
-                ordersManager.SolveFirstOrder();
+                SolveOrder();
                 MakeSolveOrderHints();
                 ordersState = OrderLoading.WithoutOrders;
             }
             if (ordersState == OrderLoading.SecondOrderLoaded)
             {
-                ordersManager.SolveSecondOrder();
+                SolveOrder();
                 MakeSolveOrderHints();
                 ordersState = OrderLoading.WithoutOrders;
             }
             if (ordersState == OrderLoading.ThirdOrderLoaded)
             {
-                ordersManager.SolveThirdOrder();
+                SolveOrder();
                 MakeSolveOrderHints();
                 ordersState = OrderLoading.WithoutOrders;
             }
             if (ordersState == OrderLoading.FifthOrderLoaded)
             {
-                ordersManager.SolveFifthOrder();
+                SolveOrder();
                 MakeSolveOrderHints();
                 ordersState = OrderLoading.WithoutOrders;
             }

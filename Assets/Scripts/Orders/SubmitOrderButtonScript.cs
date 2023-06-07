@@ -26,6 +26,7 @@ public class SubmitOrderButtonScript : MonoBehaviour
         }
         
         gameManager.HighlightOrdersButton();
+        submitButton.gameObject.SetActive(false);
         await WaitAndChangeGameState(gameManager, (GameManagerScript.GameStates)numOfOrder);
     }
     
@@ -33,7 +34,6 @@ public class SubmitOrderButtonScript : MonoBehaviour
     {
         await Task.Delay(10000);
         gameManager.gameState = newGameState + 1;
-        submitButton.SetActive(false);
         Debug.Log("Order has been submitted");
         numOfOrderToSubmit++;
     }

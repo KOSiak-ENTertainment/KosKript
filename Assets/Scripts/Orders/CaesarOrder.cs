@@ -8,21 +8,15 @@ using Random = UnityEngine.Random;
 
 namespace Orders
 {
-    public class CaesarOrder : MonoBehaviour
+    public class CaesarOrder : Order
     {
-        public string orderFilePath; //TODO Использовать orderFilePath
+        public CaesarMachine CaesarMachine { private set; get; }
+        
         public GameObject firstBugSolver;
         public GameObject secondBugSolver;
-        private string[] _orderText;
-        public GameObject submitOrder;
-
-        public void LoadOrderText() =>
-            _orderText = gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath);
 
         public BugCreator Bug { get; private set; }
 
-        public string[] GetOrderText() => _orderText;
-        
         public void InitBug(CaesarMachine caesarMachine)
         {
             Bug = new BugCreator(caesarMachine);
