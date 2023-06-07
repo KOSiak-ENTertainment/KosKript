@@ -13,19 +13,13 @@ public class LoaderManager : MonoBehaviour
     {
         var gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         gameObject.SetActive(true);
-        progressBar.gameObject.SetActive(true); 
+        progressBar.gameObject.SetActive(true);
 
-        if (gameManager.countOfSolvedOrders == 0)
-            gameManager.ordersState = GameManagerScript.OrderLoading.FirstOrderLoaded;
-        if (gameManager.countOfSolvedOrders == 1)
-            gameManager.ordersState = GameManagerScript.OrderLoading.SecondOrderLoaded;
-        if (gameManager.countOfSolvedOrders == 2)
-            gameManager.ordersState = GameManagerScript.OrderLoading.ThirdOrderLoaded;
-        if (gameManager.countOfSolvedOrders == 3)
-            gameManager.ordersState = GameManagerScript.OrderLoading.FifthOrderLoaded;
+        gameManager.ordersState = (GameManagerScript.OrderLoading)gameManager.countOfSolvedOrders;
         if (_isLoading) 
             return;
         
+        loadingText.gameObject.SetActive(true);
         _isLoading = true;
         progressBar.value = 0; // Сбросить значение полоски прогресса в начало
         loadingText.text = "Заказ загружается..."; // Установить начальный текст
