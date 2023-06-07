@@ -26,11 +26,11 @@ namespace GameManagementScripts
             FirstOrder,
             SecondOrder,
             ThirdOrder,
-            FifthOrder,
+            FourthOrder,
             FirstOrderCompleted,
             SecondOrderCompleted,
             ThirdOrderCompleted,
-            FifthOrderCompleted,
+            FourthOrderCompleted,
             NothingToDo
         }
 
@@ -39,11 +39,11 @@ namespace GameManagementScripts
             FirstOrderLoaded,
             SecondOrderLoaded,
             ThirdOrderLoaded,
-            FifthOrderLoaded,
+            FourthOrderLoaded,
             WithoutOrders
         }
 
-        public void Start()
+        public void StartGame()
         {
             orderButtons[0].gameObject.SetActive(true);
             dialogManager.Start();
@@ -74,7 +74,7 @@ namespace GameManagementScripts
                 gameState = GameStates.NothingToDo;
             }
             
-            if (gameState == GameStates.FifthOrder)
+            if (gameState == GameStates.FourthOrder)
             { 
                 orderButtons[3].gameObject.SetActive(true);
                 
@@ -91,25 +91,7 @@ namespace GameManagementScripts
 
         private void ManageOrderState()
         {
-            if (ordersState == OrderLoading.FirstOrderLoaded)
-            {
-                SolveOrder();
-                MakeSolveOrderHints();
-                ordersState = OrderLoading.WithoutOrders;
-            }
-            if (ordersState == OrderLoading.SecondOrderLoaded)
-            {
-                SolveOrder();
-                MakeSolveOrderHints();
-                ordersState = OrderLoading.WithoutOrders;
-            }
-            if (ordersState == OrderLoading.ThirdOrderLoaded)
-            {
-                SolveOrder();
-                MakeSolveOrderHints();
-                ordersState = OrderLoading.WithoutOrders;
-            }
-            if (ordersState == OrderLoading.FifthOrderLoaded)
+            if (ordersState != OrderLoading.WithoutOrders)
             {
                 SolveOrder();
                 MakeSolveOrderHints();
@@ -119,11 +101,6 @@ namespace GameManagementScripts
         
         private void UpdateMaxPossibleShift() => ordersManager.maxPossibleShift += 2;
         
-        private IEnumerator WaitForSeconds(int countOfSeconds)
-        {
-            yield return new WaitForSeconds(countOfSeconds);
-        }
-
         private void MakeSolveOrderHints()
         {
             HighlightEncryptionMachinesButton();
