@@ -53,6 +53,7 @@ namespace Orders
                 var popularLetterButton = bugSolver.transform.Find("GetPopularLetter").GetComponent<Button>();
 
                 bugWarning.text = "SystemOverflowLetter";
+                mostPopularLetter.text = "Самая частотная буква: ";
 
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);
