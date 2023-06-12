@@ -29,12 +29,14 @@ namespace GameManagementScripts
             FourthOrder,
             FifthOrder,
             SixthOrder,
+            SeventhOrder,
             FirstOrderCompleted,
             SecondOrderCompleted,
             ThirdOrderCompleted,
             FourthOrderCompleted,
             FifthOrderCompleted,
             SixthOrderCompleted,
+            SeventhOrderCompleted,
             NothingToDo
         }
 
@@ -46,6 +48,7 @@ namespace GameManagementScripts
             FourthOrderLoaded,
             FifthOrderLoaded,
             SixthOrderLoaded,
+            SeventhOrderLoaded,
             WithoutOrders
         }
 
@@ -104,6 +107,15 @@ namespace GameManagementScripts
                 orderButtons[5].gameObject.SetActive(true);
                 UpdateMaxPossibleShift();
                 dialogManager.ShowSixthCustomerDialogs();
+                HighlightOrdersButton();
+                gameState = GameStates.NothingToDo;
+            }
+            
+            if (gameState == GameStates.SeventhOrder)
+            { 
+                orderButtons[6].gameObject.SetActive(true);
+                UpdateMaxPossibleShift();
+                dialogManager.ShowSeventhCustomerDialogs();
                 HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }

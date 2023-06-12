@@ -25,6 +25,8 @@ namespace DialogManager
         
         public void ShowSixthCustomerDialogs() => ShowDialog("Dialogs/UtevDialog.txt");
         
+        public void ShowSeventhCustomerDialogs() => ShowDialog("Dialogs/LvovLeonidDialog.txt");
+        
         private void ShowDialog(string dialogPath)
         {
             var dialogParagraphs = _textTyperScript.GetTextParagraphs(dialogPath);

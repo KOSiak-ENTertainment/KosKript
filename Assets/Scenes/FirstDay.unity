@@ -225,7 +225,7 @@ MonoBehaviour:
   ordersManager: {fileID: 739773320}
   dialogManager: {fileID: 966581212}
   gameState: 0
-  ordersState: 6
+  ordersState: 7
   countOfSolvedOrders: 0
   orderButtons: []
   taskbarButtons:
@@ -2086,6 +2086,56 @@ Transform:
   m_Father: {fileID: 1470507392}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &351737752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351737753}
+  - component: {fileID: 351737754}
+  m_Layer: 0
+  m_Name: SeventhOrder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &351737753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351737752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 739773319}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &351737754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351737752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe78d8ea35ee01f4ca90894e997b523a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderFilePath: Orders/LvovLeonidOrder.txt
+  dialogFilePath: 
+  orderText: []
+  submitOrder: {fileID: 1889782588}
+  firstBugSolver: {fileID: 18735341}
+  secondBugSolver: {fileID: 116665083}
 --- !u!1 &357602186
 GameObject:
   m_ObjectHideFlags: 0
@@ -3556,6 +3606,7 @@ Transform:
   - {fileID: 1820247591}
   - {fileID: 1505188033}
   - {fileID: 868771232}
+  - {fileID: 351737753}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3578,6 +3629,7 @@ MonoBehaviour:
   - {fileID: 1820247590}
   - {fileID: 1505188032}
   - {fileID: 868771231}
+  - {fileID: 351737752}
   encryptionMachineTextUI: {fileID: 225509327}
   maxPossibleShift: 2
   documentsButtonsManager: {fileID: 691478}
