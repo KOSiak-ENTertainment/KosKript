@@ -28,11 +28,13 @@ namespace GameManagementScripts
             ThirdOrder,
             FourthOrder,
             FifthOrder,
+            SixthOrder,
             FirstOrderCompleted,
             SecondOrderCompleted,
             ThirdOrderCompleted,
             FourthOrderCompleted,
             FifthOrderCompleted,
+            SixthOrderCompleted,
             NothingToDo
         }
 
@@ -43,6 +45,7 @@ namespace GameManagementScripts
             ThirdOrderLoaded,
             FourthOrderLoaded,
             FifthOrderLoaded,
+            SixthOrderLoaded,
             WithoutOrders
         }
 
@@ -90,12 +93,22 @@ namespace GameManagementScripts
             if (gameState == GameStates.FifthOrder)
             { 
                 orderButtons[4].gameObject.SetActive(true);
-                
                 UpdateMaxPossibleShift();
                 dialogManager.ShowFifthCustomerDialogs();
                 HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
+            
+            if (gameState == GameStates.SixthOrder)
+            { 
+                orderButtons[5].gameObject.SetActive(true);
+                UpdateMaxPossibleShift();
+                dialogManager.ShowSixthCustomerDialogs();
+                HighlightOrdersButton();
+                gameState = GameStates.NothingToDo;
+            }
+            
+            
         }
 
         private int GetCurrentOrderNumber() => countOfSolvedOrders + 1;
