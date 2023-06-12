@@ -47,14 +47,16 @@ namespace DefaultNamespace
             if (buttonComponent != null)
             {
                 var loaderScript = GameObject.Find("Loader").GetComponent<LoaderManager>();
-                buttonComponent.onClick.AddListener(loaderScript.OnButtonClick);
+                buttonComponent.onClick.AddListener(DisableButtonOnClick);
             }
         }
         
-        private void OnButtonClick()
+        private void DisableButtonOnClick()
         {
-            // Обработка события нажатия кнопки
-            Debug.Log("Button Clicked!");
+            var loaderScript = GameObject.Find("Loader").GetComponent<LoaderManager>();
+            loaderScript.OnButtonClick();
+            var button = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+            button.interactable = false;
         }
     }
 }
