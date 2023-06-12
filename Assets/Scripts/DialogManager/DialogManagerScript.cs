@@ -13,26 +13,25 @@ namespace DialogManager
 
         public void Start() => _textTyperScript = gameObject.AddComponent<TextTyperScript>();
 
-        public void ShowFirstCustomerDialogs() => ShowDialog("Dialogs/ArchieRochesterDialog.txt", true);
+        public void ShowFirstCustomerDialogs() => ShowDialog("Dialogs/ArchieRochesterDialog.txt");
 
-        public void ShowSecondCustomerDialogs() => ShowDialog("Dialogs/KolesnikovaTamaraDialog.txt", true);
+        public void ShowSecondCustomerDialogs() => ShowDialog("Dialogs/KolesnikovaTamaraDialog.txt");
         
-        public void ShowThirdCustomerDialogs() => ShowDialog("Dialogs/SolmatovaEkaterinaDialog.txt", false);
+        public void ShowThirdCustomerDialogs() => ShowDialog("Dialogs/SolmatovaEkaterinaDialog.txt");
         
-        public void ShowFifthCustomerDialogs() => ShowDialog("Dialogs/PetrSanDialog.txt", false);
+        public void ShowFifthCustomerDialogs() => ShowDialog("Dialogs/PetrSanDialog.txt");
         
-        private void ShowDialog(string dialogPath, bool isThereGratitude)
+        private void ShowDialog(string dialogPath)
         {
-            var dialogParagraphs = _textTyperScript.GetTextParagraphs(dialogPath); 
+            var dialogParagraphs = _textTyperScript.GetTextParagraphs(dialogPath);
             
             customerName.text = dialogParagraphs[0];
             orderText.text = dialogParagraphs[1];
+
+            if (dialogParagraphs.Length != 3) 
+                return;
             
-            if (isThereGratitude)
-            {
-                var submitOrderButtonScript = submitOrderButton.GetComponent<SubmitOrderButtonScript>();
-                submitOrderButtonScript.thanks = dialogParagraphs[2];
-            }
+            submitOrderButton.GetComponent<SubmitOrderButtonScript>().thanks = dialogParagraphs[2];
         }
     }
 }

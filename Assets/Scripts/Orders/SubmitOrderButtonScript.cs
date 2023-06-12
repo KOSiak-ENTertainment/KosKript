@@ -14,7 +14,7 @@ public class SubmitOrderButtonScript : MonoBehaviour
     private async void SubmitOrder(int numOfOrder)
     {
         var gameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
-        gameManager.gameState = (GameManagerScript.GameStates)numOfOrder + gameManager.ordersManager.countOfOrders;
+        gameManager.gameState = (GameManagerScript.GameStates)numOfOrder + gameManager.ordersManager.orders.Count;
         gameManager.countOfSolvedOrders++;
         gameManager.solvedOrdersCounter.text = "Количество выполненных заказов: " + gameManager.countOfSolvedOrders;
 

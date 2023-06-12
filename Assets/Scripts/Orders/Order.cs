@@ -6,6 +6,7 @@ namespace Orders
     public class Order : MonoBehaviour
     {
         public string orderFilePath;
+        public string dialogFilePath;
         public string[] orderText;
         public GameObject submitOrder;
         

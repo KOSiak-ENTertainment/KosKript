@@ -11,7 +11,6 @@ namespace Orders
     {
         public List<GameObject> orders;
         public Text encryptionMachineTextUI;
-        public int countOfOrders;
         public int maxPossibleShift = 2;
         public GameObject documentsButtonsManager;
 
@@ -52,6 +51,8 @@ namespace Orders
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
                 var mostPopularLetter = bugSolver.transform.Find("MostPopularLetter").GetComponent<Text>();
                 var popularLetterButton = bugSolver.transform.Find("GetPopularLetter").GetComponent<Button>();
+
+                bugWarning.text = "Определите сдвиг:";
 
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);

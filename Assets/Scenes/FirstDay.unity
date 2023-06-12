@@ -792,7 +792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &116665084
 RectTransform:
   m_ObjectHideFlags: 0
@@ -982,6 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/SolmatovaEkaterinaOrder.txt
+  dialogFilePath: 
   orderText: []
   submitOrder: {fileID: 1889782588}
   firstBugSolver: {fileID: 18735341}
@@ -3573,7 +3574,6 @@ MonoBehaviour:
   - {fileID: 138105041}
   - {fileID: 1820247590}
   encryptionMachineTextUI: {fileID: 225509327}
-  countOfOrders: 5
   maxPossibleShift: 2
   documentsButtonsManager: {fileID: 691478}
 --- !u!1 &740485831
@@ -5249,6 +5249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/KolesnikovaTamaraOrder.txt
+  dialogFilePath: 
   orderText: []
   submitOrder: {fileID: 1889782588}
   firstBugSolver: {fileID: 18735341}
@@ -8599,6 +8600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/PetrSanOrder.txt
+  dialogFilePath: 
   orderText: []
   submitOrder: {fileID: 1889782588}
   firstBugSolver: {fileID: 18735341}
@@ -9476,6 +9478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/ArchieRochesterOrder.txt
+  dialogFilePath: 
   orderText: []
   submitOrder: {fileID: 1889782588}
   firstBugSolver: {fileID: 18735341}
