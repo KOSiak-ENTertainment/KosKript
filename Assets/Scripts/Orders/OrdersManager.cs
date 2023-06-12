@@ -39,7 +39,7 @@ namespace Orders
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);
 
-                bugWarning.text = "Зашифруйте данную часть текста: \"" + bug.UnencryptedPieceText + "\" со сдвигом: " +
+                bugWarning.text = "System Null Reference: Зашифруйте данную часть текста: \"" + bug.UnencryptedPieceText + "\" со сдвигом: " +
                                   caesarMachine.CaesarAlphabet.Shift;
 
                 StartCoroutine(WaitForInputAndValidate(inputField, bug.EncryptedPieceText, 3,
@@ -52,7 +52,7 @@ namespace Orders
                 var mostPopularLetter = bugSolver.transform.Find("MostPopularLetter").GetComponent<Text>();
                 var popularLetterButton = bugSolver.transform.Find("GetPopularLetter").GetComponent<Button>();
 
-                bugWarning.text = "Определите сдвиг:";
+                bugWarning.text = "SystemOverflowLetter";
 
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);
@@ -127,18 +127,18 @@ namespace Orders
                     new CaesarMachine(orderScript.GetOrderText()[0],
                         maxPossibleShift, false, 1);
                 orderScript.InitBug(caesarMachine);
-                var bug1 = orderScript.Bug;
-                var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug1.IntervalBegin);
+                var bug = orderScript.Bug;
+                var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug.IntervalBegin);
                 var bugSolver = orderScript.firstBugSolver;
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
                 
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);
 
-                bugWarning.text = "Зашифруйте данную часть текста: \"" + bug1.UnencryptedPieceText + "\" со сдвигом: " +
+                bugWarning.text = "System Null Reference: Зашифруйте данную часть текста: \"" + bug.UnencryptedPieceText + "\" со сдвигом: " +
                                   caesarMachine.CaesarAlphabet.Shift;
 
-                yield return StartCoroutine(WaitForInputAndValidate(inputField, bug1.EncryptedPieceText, 3,
+                yield return StartCoroutine(WaitForInputAndValidate(inputField, bug.EncryptedPieceText, 3,
                     orderScript.submitOrder, numOfOrder, orderFilePath));
             }
 
@@ -204,7 +204,7 @@ namespace Orders
                 var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
                 var mostPopularLetter = bugSolver.transform.Find("MostPopularLetter").GetComponent<Text>();
                 var popularLetterButton = bugSolver.transform.Find("GetPopularLetter").GetComponent<Button>();
-                bugWarning.text = "Определите сдвиг:";
+                bugWarning.text = "SystemOverflowLetter";
 
                 encryptionMachineTextUI.text = firstPartOfText;
                 bugSolver.SetActive(true);

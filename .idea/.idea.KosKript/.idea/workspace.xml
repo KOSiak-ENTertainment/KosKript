@@ -7,11 +7,8 @@
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/CaesarOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/CaesarOrder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/Order.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/SubmitOrderButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/SubmitOrderButtonScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +68,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.15f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\IDES\UnityEngines\2021.3.15f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\maloj\UnityProjects\KosKript -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\maloj\UnityProjects\KosKript" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -79,7 +76,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.15f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\IDES\UnityEngines\2021.3.15f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\maloj\UnityProjects\KosKript -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\maloj\UnityProjects\KosKript" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -165,6 +162,7 @@
       <workItem from="1686100807829" duration="9526000" />
       <workItem from="1686132624200" duration="1440000" />
       <workItem from="1686225209947" duration="2089000" />
+      <workItem from="1686566998318" duration="749000" />
     </task>
     <servers />
   </component>
