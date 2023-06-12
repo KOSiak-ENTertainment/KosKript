@@ -19,7 +19,9 @@ namespace DialogManager
         
         public void ShowThirdCustomerDialogs() => ShowDialog("Dialogs/SolmatovaEkaterinaDialog.txt");
         
-        public void ShowFifthCustomerDialogs() => ShowDialog("Dialogs/PetrSanDialog.txt");
+        public void ShowFourthCustomerDialogs() => ShowDialog("Dialogs/PetrSanDialog.txt");
+        
+        public void ShowFifthCustomerDialogs() => ShowDialog("Dialogs/ComradeNDialog.txt");
         
         private void ShowDialog(string dialogPath)
         {
