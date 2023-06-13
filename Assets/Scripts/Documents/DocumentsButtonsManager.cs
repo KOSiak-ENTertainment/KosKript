@@ -11,6 +11,9 @@ namespace Documents
 {
     public class DocumentsButtonsManager : MonoBehaviour
     {
+        public string machineDeviceFilePath;
+        public string machineAlgorithmFilePath;
+        public string machineBugsFilePath;
         public Text documentText; 
         public Button[] appButtons;
         public GameObject ordersManager;
@@ -23,8 +26,9 @@ namespace Documents
             
             _machinesDocs = new List<string>
             {
-                textTyperScript.ReadTextFile("Documents/CaesarDocs.txt"),
-                textTyperScript.ReadTextFile("Documents/VigenereDocs.txt"),
+                textTyperScript.ReadTextFile(machineDeviceFilePath),
+                textTyperScript.ReadTextFile(machineAlgorithmFilePath),
+                textTyperScript.ReadTextFile(machineBugsFilePath),
                 "Вы ещё не начали ни одного заказа!"
             };
             
@@ -37,7 +41,7 @@ namespace Documents
 
         public void ChangeCurrentOrderText(string text)
         {
-            _machinesDocs[2] = text;
+            _machinesDocs[3] = text;
             documentText.text = text;
             var ordersManagerScript = ordersManager.GetComponent<OrdersManager>();
             var audioSource = audioPlayer.GetComponent<AudioSource>();
