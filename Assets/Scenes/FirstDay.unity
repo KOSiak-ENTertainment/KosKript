@@ -177,6 +177,8 @@ MonoBehaviour:
   - {fileID: 592483092}
   - {fileID: 1574910125}
   - {fileID: 839012232}
+  ordersManager: {fileID: 739773318}
+  audioPlayer: {fileID: 2070490381}
 --- !u!1 &5401262
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,11 +984,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/SolmatovaEkaterinaOrder.txt
-  dialogFilePath: 
+  dialogFilePath: Dialogs/SolmatovaEkaterinaDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: 9b70db13477d97146aaf6457b65a7ff7, type: 3}
+  dialogSound: {fileID: 8300000, guid: 23c4ce24bc09f924380d28b6a87ca509, type: 3}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!1 &149911095
@@ -2133,10 +2135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/LvovLeonidOrder.txt
-  dialogFilePath: 
+  dialogFilePath: Dialogs/LvovLeonidDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
-  orderSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: ae5bda955b2a81c4eb2c6485cc7c18dd, type: 3}
   dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
@@ -4780,7 +4782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/ComradeNOrder.txt
-  dialogFilePath: 
+  dialogFilePath: Dialogs/UtevDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
   orderSound: {fileID: 0}
@@ -5861,7 +5863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/KolesnikovaTamaraOrder.txt
-  dialogFilePath: 
+  dialogFilePath: Dialogs/KolesnikovaTamaraDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
   orderSound: {fileID: 0}
@@ -7618,7 +7620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/ComradeNOrder.txt
-  dialogFilePath: 
+  dialogFilePath: Dialogs/ComradeNDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
   orderSound: {fileID: 0}
@@ -9755,7 +9757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/PetrSanOrder.txt
-  dialogFilePath: 
+  dialogFilePath: Dialogs/PetrSanDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
   orderSound: {fileID: 0}
@@ -10737,6 +10739,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8959632865871437371, guid: a5479ff6d1bf9fd438b552867d84426e, type: 3}
   m_PrefabInstance: {fileID: 2070490379}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &2070490381 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8959632865871437374, guid: a5479ff6d1bf9fd438b552867d84426e, type: 3}
+  m_PrefabInstance: {fileID: 2070490379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2107279480
 GameObject:
   m_ObjectHideFlags: 0
@@ -10785,8 +10792,8 @@ MonoBehaviour:
   dialogFilePath: Dialogs/ArchieRochesterDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
-  orderSound: {fileID: 8300000, guid: c173cc3867966954abd2d6b67a1659fc, type: 3}
-  dialogSound: {fileID: 8300000, guid: 67cd292ba8747394396595a575241809, type: 3}
+  orderSound: {fileID: 0}
+  dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!1 &2114546564

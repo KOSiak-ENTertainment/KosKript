@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using GameManagementScripts;
+using Orders;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ namespace Documents
     {
         public Text documentText; 
         public Button[] appButtons;
+        public GameObject ordersManager;
+        public AudioSource audioPlayer;
         private List<string> _machinesDocs;
 
         public void Start()
@@ -36,6 +39,11 @@ namespace Documents
         {
             _machinesDocs[2] = text;
             documentText.text = text;
+            var ordersManagerScript = ordersManager.GetComponent<OrdersManager>();
+            var audioSource = audioPlayer.GetComponent<AudioSource>();
+            var audioSlider = audioSource.GetComponentInChildren<Slider>();
+            audioSlider.value = 0f;
+            audioSource.clip = ordersManagerScript.orders[GameObject.Find("GameManager").GetComponent<GameManagerScript>().countOfSolvedOrders].GetComponent<Order>().orderSound;
         }
 
         private void ShowCanvas(int indexToShow)

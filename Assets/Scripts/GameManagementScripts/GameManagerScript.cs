@@ -54,9 +54,9 @@ namespace GameManagementScripts
 
         public void StartGame()
         {
-            orderButtons[0].gameObject.SetActive(true);
+            ActivateCurrentOrderButton();
             dialogManager.Start();
-            dialogManager.Foo(0);
+            dialogManager.ShowSomeDialog(countOfSolvedOrders);
         }
 
         public void Update()
@@ -65,63 +65,64 @@ namespace GameManagementScripts
             
             if (gameState == GameStates.SecondOrder)
             {
-                orderButtons[1].gameObject.SetActive(true);
+                ActivateCurrentOrderButton();
                 
                 UpdateMaxPossibleShift();
-                dialogManager.ShowSecondCustomerDialogs();
+                dialogManager.ShowSomeDialog(countOfSolvedOrders);
                 HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
             
             if (gameState == GameStates.ThirdOrder)
             { 
-                orderButtons[2].gameObject.SetActive(true);
-                
+                ActivateCurrentOrderButton();
                 UpdateMaxPossibleShift();
-                dialogManager.ShowThirdCustomerDialogs();
+                dialogManager.ShowSomeDialog(countOfSolvedOrders);
                 HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
             
             if (gameState == GameStates.FourthOrder)
             { 
-                orderButtons[3].gameObject.SetActive(true);
+                ActivateCurrentOrderButton();
                 
                 UpdateMaxPossibleShift();
-                dialogManager.ShowFourthCustomerDialogs();
+                dialogManager.ShowSomeDialog(countOfSolvedOrders);
                 HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
             
             if (gameState == GameStates.FifthOrder)
             { 
-                orderButtons[4].gameObject.SetActive(true);
+                ActivateCurrentOrderButton();
                 UpdateMaxPossibleShift();
-                dialogManager.ShowFifthCustomerDialogs();
+                dialogManager.ShowSomeDialog(countOfSolvedOrders);
                 HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
             
             if (gameState == GameStates.SixthOrder)
             { 
-                orderButtons[5].gameObject.SetActive(true);
+                ActivateCurrentOrderButton();
                 UpdateMaxPossibleShift();
-                dialogManager.ShowSixthCustomerDialogs();
+                dialogManager.ShowSomeDialog(countOfSolvedOrders);
                 HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
             
             if (gameState == GameStates.SeventhOrder)
             { 
-                orderButtons[6].gameObject.SetActive(true);
+                ActivateCurrentOrderButton();
                 UpdateMaxPossibleShift();
-                dialogManager.ShowSeventhCustomerDialogs();
+                dialogManager.ShowSomeDialog(countOfSolvedOrders);
                 HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
             
             
         }
+        
+        private void ActivateCurrentOrderButton() => orderButtons[countOfSolvedOrders].gameObject.SetActive(true);
 
         private int GetCurrentOrderNumber() => countOfSolvedOrders + 1;
 
