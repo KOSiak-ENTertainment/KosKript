@@ -1,4 +1,5 @@
 using GameManagementScripts;
+using Orders;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +10,19 @@ namespace DialogManager
         public Text customerName;
         public Text orderText;
         public Button submitOrderButton;
+        public GameObject audioPlayer;
+        public GameObject ordersManager;
         private TextTyperScript _textTyperScript;
 
         public void Start() => _textTyperScript = gameObject.AddComponent<TextTyperScript>();
+
+        public void Foo(int indexOfCustomer)
+        {
+            var ordersManagerScript = ordersManager.GetComponent<OrdersManager>();
+            var audioSource = audioPlayer.GetComponent<AudioSource>();
+            audioSource.clip = ordersManagerScript.orders[indexOfCustomer].GetComponent<Order>().dialogSound;
+            ShowDialog(ordersManagerScript.orders[indexOfCustomer].GetComponent<Order>().dialogFilePath);
+        }
 
         public void ShowFirstCustomerDialogs() => ShowDialog("Dialogs/ArchieRochesterDialog.txt");
 

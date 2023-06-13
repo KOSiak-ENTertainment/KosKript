@@ -9,6 +9,8 @@ namespace Orders
         public string dialogFilePath;
         public string[] orderText;
         public GameObject submitOrder;
+        public AudioClip orderSound;
+        public AudioClip dialogSound;
         
         public void LoadOrderText() =>
             orderText = gameObject.AddComponent<TextTyperScript>().GetTextParagraphs(orderFilePath);

@@ -985,6 +985,8 @@ MonoBehaviour:
   dialogFilePath: 
   orderText: []
   submitOrder: {fileID: 1889782588}
+  orderSound: {fileID: 0}
+  dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!1 &149911095
@@ -2134,6 +2136,8 @@ MonoBehaviour:
   dialogFilePath: 
   orderText: []
   submitOrder: {fileID: 1889782588}
+  orderSound: {fileID: 0}
+  dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!1 &357602186
@@ -4779,6 +4783,8 @@ MonoBehaviour:
   dialogFilePath: 
   orderText: []
   submitOrder: {fileID: 1889782588}
+  orderSound: {fileID: 0}
+  dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!1 &917725491
@@ -5056,6 +5062,8 @@ MonoBehaviour:
   customerName: {fileID: 1721139761}
   orderText: {fileID: 1721584979}
   submitOrderButton: {fileID: 1889782590}
+  audioPlayer: {fileID: 1777368380}
+  ordersManager: {fileID: 739773318}
 --- !u!4 &966581213
 Transform:
   m_ObjectHideFlags: 0
@@ -5856,6 +5864,8 @@ MonoBehaviour:
   dialogFilePath: 
   orderText: []
   submitOrder: {fileID: 1889782588}
+  orderSound: {fileID: 0}
+  dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!4 &1153583146
@@ -7611,6 +7621,8 @@ MonoBehaviour:
   dialogFilePath: 
   orderText: []
   submitOrder: {fileID: 1889782588}
+  orderSound: {fileID: 0}
+  dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!1 &1536240439
@@ -9541,6 +9553,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755202599}
   m_CullTransparentMesh: 1
+--- !u!1 &1777368380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8959632865871437370, guid: a5479ff6d1bf9fd438b552867d84426e, type: 3}
+  m_PrefabInstance: {fileID: 8959632867326481280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1777974562
 GameObject:
   m_ObjectHideFlags: 0
@@ -9741,6 +9758,8 @@ MonoBehaviour:
   dialogFilePath: 
   orderText: []
   submitOrder: {fileID: 1889782588}
+  orderSound: {fileID: 0}
+  dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!1 &1839576541
@@ -10763,9 +10782,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderFilePath: Orders/ArchieRochesterOrder.txt
-  dialogFilePath: 
+  dialogFilePath: Dialogs/ArchieRochesterDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
+  orderSound: {fileID: 8300000, guid: c173cc3867966954abd2d6b67a1659fc, type: 3}
+  dialogSound: {fileID: 8300000, guid: 67cd292ba8747394396595a575241809, type: 3}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!1 &2114546564
@@ -11042,7 +11063,7 @@ PrefabInstance:
     - target: {fileID: 8959632865871437374, guid: a5479ff6d1bf9fd438b552867d84426e, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ac9c98454fe87ae47b4ec621bc9f0fc7, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8959632865993851635, guid: a5479ff6d1bf9fd438b552867d84426e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

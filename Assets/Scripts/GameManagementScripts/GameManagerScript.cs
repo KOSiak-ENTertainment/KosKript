@@ -56,7 +56,7 @@ namespace GameManagementScripts
         {
             orderButtons[0].gameObject.SetActive(true);
             dialogManager.Start();
-            dialogManager.ShowFirstCustomerDialogs();
+            dialogManager.Foo(0);
         }
 
         public void Update()
