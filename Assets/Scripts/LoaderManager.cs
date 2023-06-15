@@ -6,6 +6,7 @@ public class LoaderManager : MonoBehaviour
 {
     public Slider progressBar; // Ссылка на компонент полоски прогресса в Unity Editor
     public Text loadingText; // Ссылка на компонент текста в Unity Editor
+    private int _numberOfOrder; 
 
     private bool _isLoading;
 
@@ -15,7 +16,7 @@ public class LoaderManager : MonoBehaviour
         gameObject.SetActive(true);
         progressBar.gameObject.SetActive(true);
 
-        gameManager.ordersState = (GameManagerScript.OrderLoading)gameManager.countOfSolvedOrders;
+        gameManager.ordersState = (GameManagerScript.OrderLoading)_numberOfOrder;
         if (_isLoading) 
             return;
         
@@ -39,5 +40,6 @@ public class LoaderManager : MonoBehaviour
         loadingText.text = "Заказ загружен!"; // Установить текст по завершении загрузки
         _isLoading = false;
         progressBar.gameObject.SetActive(false); // Скрыть полоску прогресса
+        _numberOfOrder++;
     }
 }

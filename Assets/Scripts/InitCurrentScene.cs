@@ -24,7 +24,6 @@ namespace DefaultNamespace
                 CreateButton(i + 1, _gameManagerScript.orderButtons);
             }
             
-            _gameManagerScript.StartGame();
         }
 
         private void InitGameManager() =>
