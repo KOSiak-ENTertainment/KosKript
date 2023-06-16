@@ -72,7 +72,7 @@ public class AudioManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         }
     }
 
-    void ToggleAudio()
+    public void ToggleAudio()
     {
         if (_isPlaying)
         {

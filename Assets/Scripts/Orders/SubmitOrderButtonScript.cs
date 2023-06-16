@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using DialogManager;
 using GameManagementScripts;
@@ -5,9 +6,10 @@ using UnityEngine;
 
 public class SubmitOrderButtonScript : MonoBehaviour
 {
-    public string thanks;
     public GameObject submitButton;
     public int numOfOrderToSubmit;
+
+    public string thanks = string.Empty;
 
     public void SubmitFirstOrder() => SubmitOrder(numOfOrderToSubmit - 1);
 
@@ -20,11 +22,11 @@ public class SubmitOrderButtonScript : MonoBehaviour
         gameManager.countOfSolvedOrders++;
         gameManager.solvedOrdersCounter.text = "Количество выполненных заказов: " + gameManager.countOfSolvedOrdersForUi + " из 7";
 
-        if (thanks != null)
+        if (thanks != string.Empty)
         {
             var dialogManager = GameObject.Find("DialogsManager").GetComponent<DialogManagerScript>();
             dialogManager.orderText.text = thanks;
-            thanks = null;
+            thanks = string.Empty;
         }
         
         gameManager.HighlightOrdersButton();

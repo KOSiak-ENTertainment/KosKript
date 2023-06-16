@@ -10136,9 +10136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcdf902219d81944ab5d2cae9451907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thanks: 
   submitButton: {fileID: 1889782588}
   numOfOrderToSubmit: 1
+  thanks: 
 --- !u!1 &1941867084
 GameObject:
   m_ObjectHideFlags: 0

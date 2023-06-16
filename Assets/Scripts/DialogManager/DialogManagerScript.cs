@@ -9,6 +9,7 @@ namespace DialogManager
     {
         public Text customerName;
         public Text orderText;
+        public Scrollbar Scrollbar;
         public Button submitOrderButton;
         public GameObject audioPlayer;
         public GameObject ordersManager;
@@ -20,6 +21,7 @@ namespace DialogManager
             var audioSource = audioPlayer.GetComponent<AudioSource>();
             var audioSlider = audioSource.GetComponentInChildren<Slider>();
             audioSlider.value = 0f;
+            audioSource.Play();
             audioSource.clip = ordersManagerScript.orders[indexOfCustomer].GetComponent<Order>().dialogSound;
             ShowDialog(ordersManagerScript.orders[indexOfCustomer].GetComponent<Order>().dialogFilePath);
         }
