@@ -16,54 +16,63 @@ namespace Orders
 
         public void SolveOrder(int numOfOrder)
         {
-            var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
-            var orderFilePath = orderScript.orderFilePath;
-            orderScript.LoadOrderText();
-            if (gameObject == null) 
-                return;
-            var doc = documentsButtonsManager.GetComponent<DocumentsButtonsManager>();
-            doc.ChangeCurrentOrderText(orderScript.GetOrderText()[0]);
-
-            var caesarMachine =
-                new CaesarMachine(orderScript.GetOrderText()[0],
-                    maxPossibleShift, false, 1);
-            orderScript.InitBug(caesarMachine);
-            var bug = orderScript.Bug;
-            var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug.IntervalBegin);
-            var bugSolver = orderScript.RandomlySelectBugSolver();
-            if (bugSolver.name == "FirstBugSolver")
+            var machineName = orders[numOfOrder - 1].GetComponent<Order>().machineName;
+            
+            if (machineName.Equals("Caesar"))
             {
-                var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
-                var inputField = bugSolver.transform.Find("InputField").GetComponent<InputField>();
+                var orderScript = orders[numOfOrder - 1].GetComponent<CaesarOrder>();
+                var orderFilePath = orderScript.orderFilePath;
+                orderScript.LoadOrderText();
+                if (gameObject == null) 
+                    return;
+                var doc = documentsButtonsManager.GetComponent<DocumentsButtonsManager>();
+                doc.ChangeCurrentOrderText(orderScript.GetOrderText()[0]);
 
-                encryptionMachineTextUI.text = firstPartOfText;
-                bugSolver.SetActive(true);
-
-                bugWarning.text = "System Null Reference: Зашифруйте данную часть текста: \"" + bug.UnencryptedPieceText + "\" со сдвигом: " +
-                                  caesarMachine.CaesarAlphabet.Shift;
-
-                StartCoroutine(WaitForInputAndValidate(inputField, bug.EncryptedPieceText, 3,
-                    orderScript.submitOrder, numOfOrder, orderFilePath));
-            }
-            if (bugSolver.name == "SecondBugSolver")
-            {
-                var shiftInputField = bugSolver.transform.Find("ShiftInputField").GetComponent<InputField>();
-                var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
-                var mostPopularLetter = bugSolver.transform.Find("MostPopularLetter").GetComponent<Text>();
-                var popularLetterButton = bugSolver.transform.Find("GetPopularLetter").GetComponent<Button>();
-
-                bugWarning.text = "SystemOverflowLetter";
-                mostPopularLetter.text = "Самая частотная буква: ";
-
-                encryptionMachineTextUI.text = firstPartOfText;
-                bugSolver.SetActive(true);
-
-                popularLetterButton.onClick.AddListener(() =>
+                var caesarMachine =
+                    new CaesarMachine(orderScript.GetOrderText()[0],
+                        maxPossibleShift, false, 1);
+                orderScript.InitBug(caesarMachine);
+                var bug = orderScript.Bug;
+                var firstPartOfText = caesarMachine.EncodedFile.Substring(0, bug.IntervalBegin);
+                var bugSolver = orderScript.RandomlySelectBugSolver();
+                if (bugSolver.name == "FirstBugSolver")
                 {
-                    mostPopularLetter.text = "Самая частотная буква: " + bug.MostPopularLetterInText;
-                });
+                    var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
+                    var inputField = bugSolver.transform.Find("InputField").GetComponent<InputField>();
 
-                StartCoroutine(WaitForShiftInputAndValidate(shiftInputField, bug.Shift.ToString(), 3, orderScript.submitOrder, numOfOrder, orderFilePath));
+                    encryptionMachineTextUI.text = firstPartOfText;
+                    bugSolver.SetActive(true);
+
+                    bugWarning.text = "System Null Reference: Зашифруйте данную часть текста: \"" + bug.UnencryptedPieceText + "\" со сдвигом: " +
+                                      caesarMachine.CaesarAlphabet.Shift;
+
+                    StartCoroutine(WaitForInputAndValidate(inputField, bug.EncryptedPieceText, 3,
+                        orderScript.submitOrder, numOfOrder, orderFilePath));
+                }
+                if (bugSolver.name == "SecondBugSolver")
+                {
+                    var shiftInputField = bugSolver.transform.Find("ShiftInputField").GetComponent<InputField>();
+                    var bugWarning = bugSolver.transform.Find("BugWarning").GetComponent<Text>();
+                    var mostPopularLetter = bugSolver.transform.Find("MostPopularLetter").GetComponent<Text>();
+                    var popularLetterButton = bugSolver.transform.Find("GetPopularLetter").GetComponent<Button>();
+
+                    bugWarning.text = "SystemOverflowLetter";
+                    mostPopularLetter.text = "Самая частотная буква: ";
+
+                    encryptionMachineTextUI.text = firstPartOfText;
+                    bugSolver.SetActive(true);
+
+                    popularLetterButton.onClick.AddListener(() =>
+                    {
+                        mostPopularLetter.text = "Самая частотная буква: " + bug.MostPopularLetterInText;
+                    });
+
+                    StartCoroutine(WaitForShiftInputAndValidate(shiftInputField, bug.Shift.ToString(), 3, orderScript.submitOrder, numOfOrder, orderFilePath));
+                }
+            }
+            else if (machineName.Equals("RSA"))
+            {
+                Debug.Log("Fuck! This is RSA?!");
             }
         }
 

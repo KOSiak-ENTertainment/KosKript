@@ -7,6 +7,7 @@ namespace Orders
     {
         public string orderFilePath;
         public string dialogFilePath;
+        public string machineName;
         public string[] orderText;
         public GameObject submitOrder;
         public AudioClip orderSound;
