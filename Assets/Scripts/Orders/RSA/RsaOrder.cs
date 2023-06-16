@@ -1,4 +1,4 @@
-namespace Orders
+namespace Orders.RSA
 {
     public class RsaOrder : Order
     {

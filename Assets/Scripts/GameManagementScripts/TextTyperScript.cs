@@ -14,7 +14,7 @@ namespace GameManagementScripts
             var fileText = File.ReadAllText(path);
             var paragraphs = fileText.Split(new[] { "\r\n\r\n", "\n\n" }, StringSplitOptions.RemoveEmptyEntries);
     
-            return paragraphs;`
+            return paragraphs;
         }
         
         public string ReadTextFile(string filePath)
