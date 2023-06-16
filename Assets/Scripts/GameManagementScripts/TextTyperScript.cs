@@ -10,15 +10,10 @@ namespace GameManagementScripts
     { 
         public string[] GetTextParagraphs(string filePath)
         {
-            string[] paragraphs = {};
             var path = Path.Combine(Application.dataPath, filePath);
-
-            if (File.Exists(path))
-            {
-                paragraphs = File.ReadAllText(path)
-                    .Split(new[] { "\r\n\r\n", "\n\n" }, StringSplitOptions.RemoveEmptyEntries);
-            }
-
+            var fileText = File.ReadAllText(path);
+            var paragraphs = fileText.Split(new[] { "\r\n\r\n", "\n\n" }, StringSplitOptions.RemoveEmptyEntries);
+    
             return paragraphs;
         }
         

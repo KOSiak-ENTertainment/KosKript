@@ -65,8 +65,8 @@ namespace GameManagementScripts
             if (gameState == GameStates.FirstOrder)
             {
                 ActivateOrderButton(0);
-                dialogManager.Start();
                 dialogManager.ShowSomeDialog(0);
+                gameState = GameStates.NothingToDo;
             }
             
             if (gameState == GameStates.SecondOrder)

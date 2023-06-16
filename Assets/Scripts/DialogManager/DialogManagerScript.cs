@@ -14,8 +14,6 @@ namespace DialogManager
         public GameObject ordersManager;
         private TextTyperScript _textTyperScript;
 
-        public void Start() => _textTyperScript = gameObject.AddComponent<TextTyperScript>();
-
         public void ShowSomeDialog(int indexOfCustomer)
         {
             var ordersManagerScript = ordersManager.GetComponent<OrdersManager>();
@@ -28,15 +26,14 @@ namespace DialogManager
         
         private void ShowDialog(string dialogPath)
         {
+            _textTyperScript = gameObject.GetComponent<TextTyperScript>();
             var dialogParagraphs = _textTyperScript.GetTextParagraphs(dialogPath);
             
             customerName.text = dialogParagraphs[0];
             orderText.text = dialogParagraphs[1];
 
-            if (dialogParagraphs.Length != 3) 
-                return;
-            
-            submitOrderButton.GetComponent<SubmitOrderButtonScript>().thanks = dialogParagraphs[2];
+            if (dialogParagraphs.Length == 3)
+                submitOrderButton.GetComponent<SubmitOrderButtonScript>().thanks = dialogParagraphs[2];
         }
     }
 }

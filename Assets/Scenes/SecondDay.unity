@@ -230,7 +230,7 @@ MonoBehaviour:
   solvedOrdersCounter: {fileID: 800065166}
   ordersManager: {fileID: 739773320}
   dialogManager: {fileID: 966581212}
-  gameState: 14
+  gameState: 0
   ordersState: 7
   countOfSolvedOrdersForUi: 0
   countOfSolvedOrders: 0
@@ -953,6 +953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138105042}
   - component: {fileID: 138105043}
+  - component: {fileID: 138105044}
   m_Layer: 0
   m_Name: ThirdOrder
   m_TagString: Untagged
@@ -987,14 +988,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe78d8ea35ee01f4ca90894e997b523a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: Orders/SolmatovaEkaterinaOrder.txt
-  dialogFilePath: Dialogs/SolmatovaEkaterinaDialog.txt
+  orderFilePath: Orders/NormalManAbsolutelyOrder.txt
+  dialogFilePath: Dialogs/NormalManAbsolutelyDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
   orderSound: {fileID: 8300000, guid: 9b70db13477d97146aaf6457b65a7ff7, type: 3}
   dialogSound: {fileID: 8300000, guid: 23c4ce24bc09f924380d28b6a87ca509, type: 3}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
+--- !u!114 &138105044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138105041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4620d40a22e834b8592a7d0426e992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &149911095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,6 +2202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351737753}
   - component: {fileID: 351737754}
+  - component: {fileID: 351737755}
   m_Layer: 0
   m_Name: SeventhOrder
   m_TagString: Untagged
@@ -2223,14 +2237,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe78d8ea35ee01f4ca90894e997b523a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: Orders/LvovLeonidOrder.txt
-  dialogFilePath: Dialogs/LvovLeonidDialog.txt
+  orderFilePath: Orders/CheerfulIceCreamManOrder.txt
+  dialogFilePath: Dialogs/CheerfulIceCreamManDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
-  orderSound: {fileID: 8300000, guid: ae5bda955b2a81c4eb2c6485cc7c18dd, type: 3}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: 468bd201825ad70459c8d2c16417889f, type: 3}
+  dialogSound: {fileID: 8300000, guid: b9b1339fbd0b3a44bbfe1808dccc4940, type: 3}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
+--- !u!114 &351737755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351737752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4620d40a22e834b8592a7d0426e992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &357602186
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,6 +4861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 868771232}
   - component: {fileID: 868771233}
+  - component: {fileID: 868771234}
   m_Layer: 0
   m_Name: SixthOrder
   m_TagString: Untagged
@@ -4869,14 +4896,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe78d8ea35ee01f4ca90894e997b523a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: Orders/UtevOrder.txt
-  dialogFilePath: Dialogs/UtevDialog.txt
+  orderFilePath: Orders/MoreyArtyOrder.txt
+  dialogFilePath: Dialogs/MoreyArtyDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
-  orderSound: {fileID: 8300000, guid: 6950529b5a9f6ed49a7520daf3194aff, type: 3}
-  dialogSound: {fileID: 8300000, guid: 30dd1017590e61f46a2239d7f201e444, type: 3}
+  orderSound: {fileID: 0}
+  dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
+--- !u!114 &868771234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868771231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4620d40a22e834b8592a7d0426e992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &917725491
 GameObject:
   m_ObjectHideFlags: 0
@@ -5210,6 +5249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966581213}
   - component: {fileID: 966581212}
+  - component: {fileID: 966581214}
   m_Layer: 0
   m_Name: DialogsManager
   m_TagString: Untagged
@@ -5234,7 +5274,6 @@ MonoBehaviour:
   submitOrderButton: {fileID: 1889782590}
   audioPlayer: {fileID: 1777368380}
   ordersManager: {fileID: 739773318}
-  gg: []
 --- !u!4 &966581213
 Transform:
   m_ObjectHideFlags: 0
@@ -5250,6 +5289,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966581214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966581211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4620d40a22e834b8592a7d0426e992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000103395
 GameObject:
   m_ObjectHideFlags: 0
@@ -6012,6 +6063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1153583146}
   - component: {fileID: 1153583145}
+  - component: {fileID: 1153583147}
   m_Layer: 0
   m_Name: SecondOrder
   m_TagString: Untagged
@@ -6031,8 +6083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe78d8ea35ee01f4ca90894e997b523a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: Orders/KolesnikovaTamaraOrder.txt
-  dialogFilePath: Dialogs/KolesnikovaTamaraDialog.txt
+  orderFilePath: Orders/ThalerDernulOrder.txt
+  dialogFilePath: Dialogs/ThalerDernulDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
   orderSound: {fileID: 0}
@@ -6054,6 +6106,18 @@ Transform:
   m_Father: {fileID: 739773319}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153583147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153583144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4620d40a22e834b8592a7d0426e992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1176107493
 GameObject:
   m_ObjectHideFlags: 0
@@ -7551,6 +7615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505188033}
   - component: {fileID: 1505188034}
+  - component: {fileID: 1505188035}
   m_Layer: 0
   m_Name: FifthOrder
   m_TagString: Untagged
@@ -7585,14 +7650,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe78d8ea35ee01f4ca90894e997b523a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: Orders/ComradeNOrder.txt
-  dialogFilePath: Dialogs/ComradeNDialog.txt
+  orderFilePath: Orders/JohanAndersonOrder.txt
+  dialogFilePath: Dialogs/JohanAndersonDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
   orderSound: {fileID: 0}
   dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
+--- !u!114 &1505188035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505188032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4620d40a22e834b8592a7d0426e992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1536240439
 GameObject:
   m_ObjectHideFlags: 0
@@ -9689,6 +9766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1820247591}
   - component: {fileID: 1820247592}
+  - component: {fileID: 1820247593}
   m_Layer: 0
   m_Name: FourthOrder
   m_TagString: Untagged
@@ -9723,14 +9801,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe78d8ea35ee01f4ca90894e997b523a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: Orders/PetrSanOrder.txt
-  dialogFilePath: Dialogs/PetrSanDialog.txt
+  orderFilePath: Orders/GordonFreemenOrder.txt
+  dialogFilePath: Dialogs/GordonFreemenDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
   orderSound: {fileID: 0}
   dialogSound: {fileID: 0}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
+--- !u!114 &1820247593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820247590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4620d40a22e834b8592a7d0426e992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1839576541
 GameObject:
   m_ObjectHideFlags: 0
@@ -10721,6 +10811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107279481}
   - component: {fileID: 2107279482}
+  - component: {fileID: 2107279483}
   m_Layer: 0
   m_Name: FirstOrder
   m_TagString: Untagged
@@ -10755,14 +10846,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe78d8ea35ee01f4ca90894e997b523a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: Orders/ArchieRochesterOrder.txt
-  dialogFilePath: Dialogs/ArchieRochesterDialog.txt
+  orderFilePath: Orders/SecondDayUtevFirstOrder.txt
+  dialogFilePath: Dialogs/SecondDayUtevFirstDialog.txt
   orderText: []
   submitOrder: {fileID: 1889782588}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: e95912e1846249b428e6b73f23cac0cc, type: 3}
+  dialogSound: {fileID: 8300000, guid: 7bb919ccff0144d4bae6ec75fe1cbe32, type: 3}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
+--- !u!114 &2107279483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107279480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4620d40a22e834b8592a7d0426e992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2114546564
 GameObject:
   m_ObjectHideFlags: 0
