@@ -25,7 +25,7 @@ namespace Orders
         public GameObject RandomlySelectBugSolver()
         {
             var selectedBugSolver = 
-                Random.Range(1, 2) == 0
+                Random.Range(0, 2) == 0
                     ? firstBugSolver 
                     : secondBugSolver;
             
