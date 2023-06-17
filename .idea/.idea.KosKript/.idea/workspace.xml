@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameLoading.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameLoading.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/Caesar/CaesarOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/Caesar/CaesarOrder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Desktop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Desktop.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Letter.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Letter.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +181,7 @@
       <workItem from="1686891024776" duration="12319000" />
       <workItem from="1686916320085" duration="3328000" />
       <workItem from="1686981903224" duration="25308000" />
-      <workItem from="1687017021763" duration="6007000" />
+      <workItem from="1687017021763" duration="7547000" />
     </task>
     <servers />
   </component>

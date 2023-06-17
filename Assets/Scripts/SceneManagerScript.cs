@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SceneManagerScript : MonoBehaviour
@@ -33,4 +34,6 @@ public class SceneManagerScript : MonoBehaviour
         hintText.transform.Find("HintText").GetComponent<Text>().text =
             "Запустить компьютер вы можете нажав на красную кнопку.";
     }
+    
+    public void LoadNextScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 }
