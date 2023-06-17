@@ -7,8 +7,7 @@
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SecondDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SecondDay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/TextTyperScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/TextTyperScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/RsaOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/RsaOrder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/GetTaskButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/GetTaskButtonScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +169,7 @@
       <workItem from="1686662277707" duration="740000" />
       <workItem from="1686891024776" duration="12319000" />
       <workItem from="1686916320085" duration="3328000" />
+      <workItem from="1686981903224" duration="2424000" />
     </task>
     <servers />
   </component>
