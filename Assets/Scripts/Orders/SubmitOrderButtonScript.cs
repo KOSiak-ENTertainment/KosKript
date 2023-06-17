@@ -1,14 +1,18 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using DialogManager;
 using GameManagementScripts;
+using Orders.RSA;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SubmitOrderButtonScript : MonoBehaviour
 {
     public GameObject submitButton;
+    public RsaCustomerCheckerScript customerCheckerScript;
     public int numOfOrderToSubmit;
-
+    public List<GameObject> objectsForDeactivate;
     public string thanks = string.Empty;
 
     public void SubmitFirstOrder() => SubmitOrder(numOfOrderToSubmit - 1);
@@ -40,5 +44,24 @@ public class SubmitOrderButtonScript : MonoBehaviour
         gameManager.gameState = newGameState + 1;
         Debug.Log("Order has been submitted");
         numOfOrderToSubmit++;
+        if (objectsForDeactivate != null && objectsForDeactivate.Count != 0)
+        {
+            DeactivateObjects();
+            ActivateLastButton();
+            customerCheckerScript.nameOfBugSolver = null;
+        }
+    }
+
+    private void DeactivateObjects()
+    {
+        foreach (var obj in objectsForDeactivate)
+        {
+            obj.SetActive(false);
+        }
+    }
+
+    private void ActivateLastButton()
+    {
+        objectsForDeactivate[^1].GetComponent<Button>().interactable = true;
     }
 }

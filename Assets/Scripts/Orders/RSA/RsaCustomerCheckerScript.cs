@@ -7,6 +7,8 @@ namespace Orders.RSA
     {
         public GameObject firstBugSolver;
         public GameObject secondBugSolver;
+        public string nameOfBugSolver;
+        public GameObject taskSolver;
         
         private Button _button;
         private Text _textUI;
@@ -23,23 +25,22 @@ namespace Orders.RSA
 
         private void ActivateRandomObject()
         {
-            // Генерируем случайное число 0 или 1 для выбора объекта
-            var randomIndex = Random.Range(0, 1);
-
-            // Активируем выбранный объект и деактивируем другой
-            if (randomIndex == 0)
+            if (nameOfBugSolver.Equals("FirstBugSolver"))
             {
-                firstBugSolver.SetActive(true);
-                secondBugSolver.SetActive(false);
+                _textUI.gameObject.SetActive(true);
+                _textUI.text = _uniqueTexts[0];
+                taskSolver.SetActive(true);
+            }
+            else if (nameOfBugSolver.Equals("SecondBugSolver"))
+            {
+                _textUI.gameObject.SetActive(true);
+                _textUI.text = _uniqueTexts[1];
             }
             else
             {
-                firstBugSolver.SetActive(false);
-                secondBugSolver.SetActive(true);
+                _textUI.gameObject.SetActive(true);
+                _textUI.text = "Вы ещё не загрузили ни одного заказа!!!";
             }
-
-            // Устанавливаем уникальный текст на Text UI
-            _textUI.text = _uniqueTexts[randomIndex];
         }
     }
 }

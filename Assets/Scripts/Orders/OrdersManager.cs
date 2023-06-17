@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Documents;
 using MachinesScripts;
+using Orders.RSA;
 using UnityEngine;
 using UnityEngine.UI;
+using static MachinesScripts.RSA;
 
 namespace Orders
 {
@@ -72,7 +74,35 @@ namespace Orders
             }
             else if (machineName.Equals("RSA"))
             {
-                Debug.Log("Fuck! This is RSA?!");
+                var orderScript = orders[numOfOrder - 1].GetComponent<RsaOrder>();
+                orderScript.LoadOrderText();
+                orderScript.customerChecker.nameOfBugSolver = null;
+                var doc = documentsButtonsManager.GetComponent<DocumentsButtonsManager>();
+                doc.ChangeCurrentOrderText(orderScript.GetOrderText()[0]);
+                var rsa = new MachinesScripts.RSA(orderScript.GetOrderText()[0]);
+
+                var randomIndex = Random.Range(0, 1);
+
+                // Активируем выбранный объект и деактивируем другой
+                if (randomIndex == 0)
+                {
+                    Debug.Log("FirstBug!!!");
+                    var firstBug = new Ruk1Bug(rsa);
+                    orderScript.customerChecker.firstBugSolver.SetActive(true);
+                    orderScript.customerChecker.secondBugSolver.SetActive(false);
+                    orderScript.customerChecker.nameOfBugSolver = "FirstBugSolver";
+                    orderScript.taskButtonScript.ModN = firstBug.ModulN;
+                    var encryptorScript = orderScript.taskButtonScript.encryptor.GetComponent<EncryptorScript>();
+                    encryptorScript.CodSymbol = firstBug.CodSymbol;
+                    encryptorScript.CompleteSymbol = firstBug.CompleteSymbol;
+                }
+                else
+                {
+                    Debug.Log("SecondBug!!!");
+                    orderScript.customerChecker.firstBugSolver.SetActive(false);
+                    orderScript.customerChecker.secondBugSolver.SetActive(true);
+                    orderScript.customerChecker.nameOfBugSolver = "SecondBugSolver";
+                }
             }
         }
 

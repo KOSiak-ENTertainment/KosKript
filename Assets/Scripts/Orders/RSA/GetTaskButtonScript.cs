@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ namespace Orders.RSA
     public class GetTaskButtonScript : MonoBehaviour
     {
         public GameObject questionSolver;
+        public GameObject encryptor;
+        public BigInteger ModN;
         private Text _questionText;
         private InputField _answerInput;
         private Text _resultText;
@@ -63,7 +66,7 @@ namespace Orders.RSA
         private void ShowRandomQuestion()
         {
             var randomIndex = Random.Range(0, _dictionary.Count);
-            
+
             _currentQuestion = _dictionary.Keys.ElementAt(randomIndex);
             _currentAnswer = _dictionary[_currentQuestion];
 
@@ -74,6 +77,8 @@ namespace Orders.RSA
             _resultText.text = string.Empty;
 
             _waitingForInput = true;
+
+            gameObject.GetComponent<Button>().interactable = false;
         }
 
         private void Update()
@@ -86,16 +91,20 @@ namespace Orders.RSA
 
         private void CheckAnswer()
         {
-            if (int.TryParse(_answerInput.text, out var answer))
+            if (int.TryParse(_answerInput.text, out var answer) || _answerInput.text.ToLower() == "желтый")
             {
-                _resultText.text = answer == _currentAnswer ? "Правильно!" : "Неправильно. Попробуйте еще раз.";
+                if (answer == _currentAnswer || _answerInput.text.ToLower() == "желтый")
+                {
+                    _resultText.text = "N = " + ModN;
+                    _waitingForInput = false;
+                    encryptor.SetActive(true);
+                }
+                else
+                {
+                    _resultText.text = "Неправильно. Попробуйте еще раз.";
+                    _waitingForInput = true;
+                }
             }
-            else
-            {
-                _resultText.text = "Введите числовой ответ.";
-            }
-
-            _waitingForInput = false;
         }
     }
 }
