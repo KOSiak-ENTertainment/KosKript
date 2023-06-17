@@ -25,22 +25,25 @@ namespace Orders.RSA
 
         private void ActivateRandomObject()
         {
-            if (nameOfBugSolver.Equals("FirstBugSolver"))
+            if (nameOfBugSolver == null)
+            { 
+                _textUI.gameObject.SetActive(true);
+                _textUI.text = "Вы ещё не загрузили ни одного заказа!!!";
+            }
+            
+            else if (nameOfBugSolver.Equals("FirstBugSolver"))
             {
                 _textUI.gameObject.SetActive(true);
                 _textUI.text = _uniqueTexts[0];
                 taskSolver.SetActive(true);
             }
+            
             else if (nameOfBugSolver.Equals("SecondBugSolver"))
             {
                 _textUI.gameObject.SetActive(true);
                 _textUI.text = _uniqueTexts[1];
             }
-            else
-            {
-                _textUI.gameObject.SetActive(true);
-                _textUI.text = "Вы ещё не загрузили ни одного заказа!!!";
-            }
+           
         }
     }
 }

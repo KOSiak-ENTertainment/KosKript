@@ -1,3 +1,4 @@
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,8 @@ namespace Orders.RSA
 {
     public class CharacterSolverScript : MonoBehaviour
     {
+        public BigInteger FirstNum;
+        public BigInteger SecondNum;
         private InputField inputField1;
         private InputField inputField2;
         private Button button;
@@ -77,8 +80,8 @@ namespace Orders.RSA
 
         private void OnButtonClick()
         {
-            inputField1.text = "1 2";
-            inputField2.text = "1 2";
+            inputField1.text = FirstNum.ToString();
+            inputField2.text = SecondNum.ToString();
         }
     }
 }

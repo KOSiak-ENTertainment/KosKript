@@ -5,5 +5,8 @@ namespace Orders.RSA
         public RsaCustomerCheckerScript customerChecker;
         public GetTaskButtonScript taskButtonScript;
         public EncryptorScript EncryptorScript;
+        public QuestionSolver QuestionSolver;
+        public CharacterSolverScript CharacterSolverScript;
+        public EulerSolverScript EulerSolverScript;
     }
 }

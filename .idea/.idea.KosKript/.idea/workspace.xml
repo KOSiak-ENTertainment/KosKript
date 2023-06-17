@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SecondDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SecondDay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MachinesScripts/RSA.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MachinesScripts/RSA.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/Caesar/SubmitOrderButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/SubmitOrderButtonScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/Caesar/SubmitOrderButtonScript.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/SubmitOrderButtonScript.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/GetTaskButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/GetTaskButtonScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/CharacterSolverScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/CharacterSolverScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/EncryptorScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/EncryptorScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/RsaCustomerCheckerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/RsaCustomerCheckerScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/RsaOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/RSA/RsaOrder.cs" afterDir="false" />
     </list>
@@ -176,7 +173,7 @@
       <workItem from="1686662277707" duration="740000" />
       <workItem from="1686891024776" duration="12319000" />
       <workItem from="1686916320085" duration="3328000" />
-      <workItem from="1686981903224" duration="16379000" />
+      <workItem from="1686981903224" duration="24922000" />
     </task>
     <servers />
   </component>

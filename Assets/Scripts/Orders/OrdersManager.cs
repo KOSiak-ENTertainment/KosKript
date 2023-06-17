@@ -95,6 +95,8 @@ namespace Orders
                     var encryptorScript = orderScript.taskButtonScript.encryptor.GetComponent<EncryptorScript>();
                     encryptorScript.CodSymbol = firstBug.CodSymbol;
                     encryptorScript.CompleteSymbol = firstBug.CompleteSymbol;
+                    encryptorScript.isInputEnabled = true;
+                    encryptorScript.nums.text = encryptorScript.GetCodSymbol();
                 }
                 else
                 {
@@ -102,6 +104,8 @@ namespace Orders
                     orderScript.customerChecker.firstBugSolver.SetActive(false);
                     orderScript.customerChecker.secondBugSolver.SetActive(true);
                     orderScript.customerChecker.nameOfBugSolver = "SecondBugSolver";
+                    orderScript.CharacterSolverScript.FirstNum = rsa.SimpleNumberOne;
+                    orderScript.CharacterSolverScript.SecondNum = rsa.SimpleNumberTwo;
                 }
             }
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Orders.RSA
@@ -12,23 +13,21 @@ namespace Orders.RSA
         public List<BigInteger> CodSymbol;
         public List<BigInteger> CompleteSymbol;
         public GameObject submitOrderButton;
-        private Text _nums;
-        private InputField _inputForNums;
-        private bool _isInputEnabled = true;
+        public bool isInputEnabled = true;
+        public List<GameObject> objForOff;
+        public Text nums;
+        public InputField inputForNums;
+        public Text input;
 
         public void Start()
         {
-            _nums = GameObject.Find("RsaUncryptedText").GetComponent<Text>();
-            _inputForNums = GameObject.Find("InputEncryptedText").GetComponent<InputField>();
-            _nums.text = GetCodSymbol();
-
             // Добавляем обработчик события для поля ввода текста
-            _inputForNums.onEndEdit.AddListener(OnInputEndEdit);
+            inputForNums.onEndEdit.AddListener(OnInputEndEdit);
         }
 
         private void OnInputEndEdit(string input)
         {
-            if (!_isInputEnabled)
+            if (!isInputEnabled)
                 return;
 
             // Разделяем введенный текст на числа с помощью пробелов
@@ -70,12 +69,13 @@ namespace Orders.RSA
             }
 
             // Введенные числа совпадают, отключаем возможность ввода
-            _isInputEnabled = false;
+            isInputEnabled = false;
             Debug.Log("Введенные числа совпадают.");
+            submitOrderButton.GetComponent<SubmitOrderButtonScript>().objectsForDeactivate = objForOff;
             submitOrderButton.SetActive(true);
         }
 
-        private string GetCodSymbol()
+        public string GetCodSymbol()
         {
             return CodSymbol.Aggregate("", (current, num) => current + (num + " "));
         }
