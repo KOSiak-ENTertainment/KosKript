@@ -5,6 +5,7 @@ using DialogManager;
 using GameManagementScripts;
 using Orders.RSA;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SubmitOrderButtonScript : MonoBehaviour
@@ -44,7 +45,7 @@ public class SubmitOrderButtonScript : MonoBehaviour
         gameManager.gameState = newGameState + 1;
         Debug.Log("Order has been submitted");
         numOfOrderToSubmit++;
-        if (objectsForDeactivate != null && objectsForDeactivate.Count != 0)
+        if (objectsForDeactivate != null && objectsForDeactivate.Count != 0 && SceneManager.GetActiveScene().name.Equals("SecondDay"))
         {
             DeactivateObjects();
             ActivateLastButton();

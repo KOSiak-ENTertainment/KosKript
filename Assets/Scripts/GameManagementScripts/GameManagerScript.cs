@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using MachinesScripts;
 using Orders;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 namespace GameManagementScripts
@@ -61,6 +62,12 @@ namespace GameManagementScripts
         public void Update()
         {
             ManageOrderState();
+
+            if (countOfSolvedOrders == 7 && ordersState == OrderLoading.WithoutOrders &&
+                gameState == GameStates.FirstOrderCompleted)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
 
             if (gameState == GameStates.FirstOrder)
             {
@@ -124,8 +131,6 @@ namespace GameManagementScripts
                 HighlightOrdersButton();
                 gameState = GameStates.NothingToDo;
             }
-            
-            
         }
         
         private void ActivateOrderButton(int numOfOrderButton) => orderButtons[numOfOrderButton].gameObject.SetActive(true);
