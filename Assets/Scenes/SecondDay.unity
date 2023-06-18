@@ -2582,13 +2582,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7967058aa7d4c0dae3c79f2cba4597d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: 
-  dialogFilePath: 
+  orderFilePath: Orders/CheerfulIceCreamManOrder.txt
+  dialogFilePath: Dialogs/CheerfulIceCreamManDialog.txt
   machineName: RSA
   orderText: []
   submitOrder: {fileID: 2067677325}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: 468bd201825ad70459c8d2c16417889f, type: 3}
+  dialogSound: {fileID: 8300000, guid: b9b1339fbd0b3a44bbfe1808dccc4940, type: 3}
   customerChecker: {fileID: 1480625561}
   taskButtonScript: {fileID: 774780897}
   EncryptorScript: {fileID: 1589574917}
@@ -3302,6 +3302,8 @@ MonoBehaviour:
   - {fileID: 2143233136}
   - {fileID: 1398517531}
   correctValues: []
+  successDisplayed: 0
+  isItNeedNewQuestion: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6443,8 +6445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7967058aa7d4c0dae3c79f2cba4597d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: 
-  dialogFilePath: 
+  orderFilePath: Orders/MoreyArtyOrder.txt
+  dialogFilePath: Dialogs/MoreyArtyDialog.txt
   machineName: RSA
   orderText: []
   submitOrder: {fileID: 2067677325}
@@ -10367,13 +10369,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7967058aa7d4c0dae3c79f2cba4597d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: 
-  dialogFilePath: 
+  orderFilePath: Orders/JohanAndersonOrder.txt
+  dialogFilePath: Dialogs/JohanAndersonDialog.txt
   machineName: RSA
   orderText: []
   submitOrder: {fileID: 2067677325}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: d5f3924e1cb961e419d8d94b3322bfe2, type: 3}
+  dialogSound: {fileID: 8300000, guid: 02469a3f460b3ff42b9d2d735a142a8e, type: 3}
   customerChecker: {fileID: 1480625561}
   taskButtonScript: {fileID: 774780897}
   EncryptorScript: {fileID: 1589574917}

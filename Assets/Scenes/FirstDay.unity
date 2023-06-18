@@ -7847,8 +7847,8 @@ MonoBehaviour:
   machineName: Caesar
   orderText: []
   submitOrder: {fileID: 1889782588}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: f5930ce9c4f03cd4194a0accabc1c33a, type: 3}
+  dialogSound: {fileID: 8300000, guid: b4dec61582222df4daf2cf56902d8cfa, type: 3}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!114 &1505188035
@@ -10079,8 +10079,8 @@ MonoBehaviour:
   machineName: Caesar
   orderText: []
   submitOrder: {fileID: 1889782588}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: 3a1ffcef641a68f46a30665ca82919b6, type: 3}
+  dialogSound: {fileID: 8300000, guid: f7310036d0d3b6143a1f3c14cff77e4e, type: 3}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!114 &1820247593
@@ -11203,8 +11203,8 @@ MonoBehaviour:
   machineName: Caesar
   orderText: []
   submitOrder: {fileID: 1889782588}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: 0e50b2cd20f0020418d69b39f34c250a, type: 3}
+  dialogSound: {fileID: 8300000, guid: a5962dab21c23924ba45268160c8f048, type: 3}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!114 &2107279483
