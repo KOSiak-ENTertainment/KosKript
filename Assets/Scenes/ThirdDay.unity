@@ -850,6 +850,7 @@ MonoBehaviour:
   dialogSound: {fileID: 0}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
+  MvpiManager: {fileID: 1441201587}
 --- !u!1 &149911095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,6 +2249,7 @@ MonoBehaviour:
   dialogSound: {fileID: 0}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
+  MvpiManager: {fileID: 1441201587}
 --- !u!1 &361510427
 GameObject:
   m_ObjectHideFlags: 0
@@ -5620,6 +5622,7 @@ MonoBehaviour:
   dialogSound: {fileID: 0}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
+  MvpiManager: {fileID: 1441201587}
 --- !u!1 &872581385
 GameObject:
   m_ObjectHideFlags: 0
@@ -7252,6 +7255,7 @@ MonoBehaviour:
   dialogSound: {fileID: 0}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
+  MvpiManager: {fileID: 1441201587}
 --- !u!1 &1163737226
 GameObject:
   m_ObjectHideFlags: 0
@@ -9312,6 +9316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1441201586}
+  - component: {fileID: 1441201587}
   m_Layer: 0
   m_Name: MPVI
   m_TagString: Untagged
@@ -9341,6 +9346,20 @@ RectTransform:
   m_AnchoredPosition: {x: -396.94693, y: 15.1982}
   m_SizeDelta: {x: 997.9461, y: 69.6035}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1441201587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441201585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da54ca4f3074928b2c835696610b353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 1085341628}
+  byteArray: 
 --- !u!1 &1455861613
 GameObject:
   m_ObjectHideFlags: 0
@@ -9781,6 +9800,7 @@ MonoBehaviour:
   dialogSound: {fileID: 0}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
+  MvpiManager: {fileID: 1441201587}
 --- !u!1 &1536240439
 GameObject:
   m_ObjectHideFlags: 0
@@ -11647,6 +11667,7 @@ MonoBehaviour:
   dialogSound: {fileID: 0}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
+  MvpiManager: {fileID: 1441201587}
 --- !u!1 &1839576541
 GameObject:
   m_ObjectHideFlags: 0
@@ -13194,8 +13215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbbeb6b0533f4cd382c9a651a8b6a39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderFilePath: 
-  dialogFilePath: 
+  orderFilePath: Orders/UtevOrder.txt
+  dialogFilePath: Dialogs/UtevDialog.txt
   machineName: Quant
   orderText: []
   submitOrder: {fileID: 634928174}
@@ -13203,6 +13224,7 @@ MonoBehaviour:
   dialogSound: {fileID: 0}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
+  MvpiManager: {fileID: 1441201587}
 --- !u!1 &2114546564
 GameObject:
   m_ObjectHideFlags: 0

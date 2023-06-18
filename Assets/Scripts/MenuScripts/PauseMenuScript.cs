@@ -17,7 +17,7 @@ namespace MenuScripts
 
         public void QuitToMainMenu()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene("MainMenu");
         }
 
         private void Start()

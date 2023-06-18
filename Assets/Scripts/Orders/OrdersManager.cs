@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Documents;
 using MachinesScripts;
+using Orders.Quant;
 using Orders.RSA;
 using UnityEngine;
 using UnityEngine.UI;
@@ -113,6 +114,20 @@ namespace Orders
                     };
                     orderScript.EulerSolverScript.successDisplayed = false;
                 }
+            }
+            else if (machineName.Equals("Quant"))
+            {
+                Debug.Log("QUANT!");
+                var orderScript = orders[numOfOrder - 1].GetComponent<QuantOrder>();
+                orderScript.LoadOrderText();
+                var doc = documentsButtonsManager.GetComponent<DocumentsButtonsManager>();
+                doc.ChangeCurrentOrderText(orderScript.GetOrderText()[0]);
+                var bug = new BB84(orderScript.GetOrderText()[0]);
+                var ruk = new Ruk2Bug(bug);
+                orderScript.KeyManager.Key = ruk.SecretKey;
+                orderScript.KeyManager.FillFieldsWithNumbers();
+                orderScript.MvpiManager.byteArray = ruk.Number;
+                orderScript.MvpiManager.PrintByteArray();
             }
         }
 

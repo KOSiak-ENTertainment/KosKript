@@ -10,7 +10,7 @@ namespace GameManagementScripts
     { 
         public string[] GetTextParagraphs(string filePath)
         {
-            var path = Path.Combine(Application.dataPath, filePath);
+            var path = Path.Combine(Application.streamingAssetsPath, filePath);
             var fileText = File.ReadAllText(path);
             var paragraphs = fileText.Split(new[] { "\r\n\r\n", "\n\n" }, StringSplitOptions.RemoveEmptyEntries);
     
@@ -19,7 +19,7 @@ namespace GameManagementScripts
         
         public string ReadTextFile(string filePath)
         {
-            var path = Path.Combine(Application.dataPath, filePath);
+            var path = Path.Combine(Application.streamingAssetsPath, filePath);
             if (File.Exists(path)) 
                 return File.ReadAllText(path);
 
