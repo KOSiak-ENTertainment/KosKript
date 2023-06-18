@@ -10,7 +10,8 @@ namespace Orders.RSA
         public List<InputField> inputFields; // Ссылки на ваши InputField'ы
         public List<string> correctValues; // Правильные значения
         private List<bool> inputFieldCorrect;
-        private bool successDisplayed; // Флаг, указывающий, был ли уже выведен успешный результат
+        public bool successDisplayed; // Флаг, указывающий, был ли уже выведен успешный результат
+        public bool isItNeedNewQuestion = false;
 
         private void Start()
         {
@@ -47,6 +48,12 @@ namespace Orders.RSA
             {
                 Debug.Log("Success");
                 taskSolver.SetActive(true);
+                if (isItNeedNewQuestion)
+                {
+                    taskSolver.GetComponent<QuestionSolver>().ShowRandomQuestion();
+                }
+
+                isItNeedNewQuestion = true;
                 successDisplayed = true; // Устанавливаем флаг успешного вывода
             }
         }

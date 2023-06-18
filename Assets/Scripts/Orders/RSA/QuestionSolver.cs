@@ -10,6 +10,7 @@ namespace Orders.RSA
         public Text questionText;
         public InputField answerInput;
         public GameObject objectToActivate;
+        public List<GameObject> objForDeact;
 
         private Dictionary<string, int> questions;
 
@@ -52,7 +53,7 @@ namespace Orders.RSA
             ShowRandomQuestion();
         }
 
-        private void ShowRandomQuestion()
+        public void ShowRandomQuestion()
         {
             // Выбираем случайный вопрос из словаря
             int randomIndex = Random.Range(0, questions.Count);
@@ -86,15 +87,13 @@ namespace Orders.RSA
             {
                 // Если ответ верный, активируем объект
                 objectToActivate.SetActive(true);
+                objectToActivate.GetComponent<SubmitOrderButtonScript>().objectsForDeactivate = objForDeact;
                 Debug.Log("Правильный ответ!");
             }
             else
             {
                 Debug.Log("Неправильный ответ!");
             }
-
-            // Показываем новый случайный вопрос
-            ShowRandomQuestion();
         }
     }
 }

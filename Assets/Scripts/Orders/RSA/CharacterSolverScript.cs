@@ -8,6 +8,7 @@ namespace Orders.RSA
     {
         public BigInteger FirstNum;
         public BigInteger SecondNum;
+        public EulerSolverScript euler;
         private InputField inputField1;
         private InputField inputField2;
         private Button button;
@@ -82,6 +83,7 @@ namespace Orders.RSA
         {
             inputField1.text = FirstNum.ToString();
             inputField2.text = SecondNum.ToString();
+            euler.gameObject.SetActive(true);
         }
     }
 }

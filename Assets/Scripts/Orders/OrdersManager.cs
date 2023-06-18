@@ -81,7 +81,7 @@ namespace Orders
                 doc.ChangeCurrentOrderText(orderScript.GetOrderText()[0]);
                 var rsa = new MachinesScripts.RSA(orderScript.GetOrderText()[0]);
 
-                var randomIndex = Random.Range(0, 1);
+                var randomIndex = Random.Range(0, 2);
 
                 // Активируем выбранный объект и деактивируем другой
                 if (randomIndex == 0)
@@ -106,6 +106,12 @@ namespace Orders
                     orderScript.customerChecker.nameOfBugSolver = "SecondBugSolver";
                     orderScript.CharacterSolverScript.FirstNum = rsa.SimpleNumberOne;
                     orderScript.CharacterSolverScript.SecondNum = rsa.SimpleNumberTwo;
+                    orderScript.EulerSolverScript.correctValues = new List<string>()
+                    {
+                        rsa.SimpleNumberOne.ToString(), rsa.SimpleNumberTwo.ToString(),
+                        (rsa.SimpleNumberOne - 1).ToString(), (rsa.SimpleNumberTwo - 1).ToString()
+                    };
+                    orderScript.EulerSolverScript.successDisplayed = false;
                 }
             }
         }

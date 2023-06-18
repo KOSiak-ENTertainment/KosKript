@@ -7,7 +7,7 @@ namespace Orders.RSA
     {
         public GameObject firstBugSolver;
         public GameObject secondBugSolver;
-        public string nameOfBugSolver;
+        public string nameOfBugSolver = null;
         public GameObject taskSolver;
         
         private Button _button;
@@ -42,6 +42,7 @@ namespace Orders.RSA
             {
                 _textUI.gameObject.SetActive(true);
                 _textUI.text = _uniqueTexts[1];
+                taskSolver.SetActive(true);
             }
            
         }

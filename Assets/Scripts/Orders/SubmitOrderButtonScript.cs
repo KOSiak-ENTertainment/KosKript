@@ -63,6 +63,9 @@ public class SubmitOrderButtonScript : MonoBehaviour
 
     private void ActivateLastButton()
     {
-        objectsForDeactivate[^1].GetComponent<Button>().interactable = true;
+        if (objectsForDeactivate[^1].TryGetComponent(out Button component))
+        {
+            component.interactable = true;
+        }
     }
 }
