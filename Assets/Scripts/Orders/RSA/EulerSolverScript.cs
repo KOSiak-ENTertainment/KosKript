@@ -30,14 +30,17 @@ namespace Orders.RSA
         {
             if (successDisplayed)
             {
-                return; // Если успешный результат уже был выведен, прекращаем проверку
+                return; // If success has already been displayed, stop the validation
             }
 
             bool allCorrect = true;
 
             for (int i = 0; i < inputFields.Count; i++)
             {
-                if (inputFields[i].text != correctValues[i])
+                string userInput = inputFields[i].text.Trim(); // Remove leading and trailing spaces from user input
+                string correctValue = correctValues[i].Trim(); // Remove leading and trailing spaces from the correct value
+
+                if (userInput != correctValue)
                 {
                     allCorrect = false;
                     break;
@@ -54,7 +57,7 @@ namespace Orders.RSA
                 }
 
                 isItNeedNewQuestion = true;
-                successDisplayed = true; // Устанавливаем флаг успешного вывода
+                successDisplayed = true; // Set the success display flag
             }
         }
     }
