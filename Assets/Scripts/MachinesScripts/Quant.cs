@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-class Program
+/*class Program
 {
     static void Main(string[] args)
     {
@@ -10,7 +10,8 @@ class Program
         BB84 bb84 = new BB84(message);
         var ruk = new Ruk2Bug(bb84);
     }
-}
+}*/
+
 class Ruk2Bug
 {
     public int[] SecretKey;

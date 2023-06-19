@@ -128,6 +128,9 @@ namespace Orders
                 orderScript.KeyManager.FillFieldsWithNumbers();
                 orderScript.MvpiManager.byteArray = ruk.Number;
                 orderScript.MvpiManager.PrintByteArray();
+                orderScript.IndexesManager.indexesArray = ruk.IndexNumber;
+                orderScript.IndexesManager.PrintIndexesArray();
+                orderScript.NumberInput.numbersList = ruk.DecryptSimbols;
             }
         }
 

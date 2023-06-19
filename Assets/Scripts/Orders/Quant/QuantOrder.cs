@@ -8,5 +8,7 @@ namespace Orders.Quant
         public QuTunnelTesterScript quTunnelTesterScript;
         public KeyManager KeyManager;
         public MVPIManager MvpiManager;
+        public IndexesManager IndexesManager;
+        public NumberInput NumberInput;
     }
 }

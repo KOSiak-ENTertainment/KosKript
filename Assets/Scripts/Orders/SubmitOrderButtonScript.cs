@@ -51,6 +51,10 @@ public class SubmitOrderButtonScript : MonoBehaviour
             ActivateLastButton();
             customerCheckerScript.nameOfBugSolver = null;
         }
+        if (objectsForDeactivate != null && objectsForDeactivate.Count != 0 && SceneManager.GetActiveScene().name.Equals("ThirdDay"))
+        {
+            DeactivateObjects();
+        }
     }
 
     private void DeactivateObjects()
