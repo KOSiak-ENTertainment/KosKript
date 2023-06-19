@@ -9,7 +9,6 @@ namespace DialogManager
     {
         public Text customerName;
         public Text orderText;
-        public Scrollbar Scrollbar;
         public Button submitOrderButton;
         public GameObject audioPlayer;
         public GameObject ordersManager;

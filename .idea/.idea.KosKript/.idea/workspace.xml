@@ -5,81 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6949041-658e-45e1-bf74-79465ec72ea6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScrollViewController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScrollViewController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/QuantAlgorithm.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/QuantAlgorithm.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/QuantBugs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/QuantBugs.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/QuantDevice.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/QuantDevice.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/RsaAlgorithm.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/RsaAlgorithm.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/RsaBugs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/RsaBugs.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/RsaDevice.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/RsaDevice.txt.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KosKript/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/ArchieRochesterDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/ArchieRochesterDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/CheerfulIceCreamManDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/CheerfulIceCreamManDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/ComradeNDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/ComradeNDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/GordonFreemenDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/GordonFreemenDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/JohanAndersonDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/JohanAndersonDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/KolesnikovaTamaraDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/KolesnikovaTamaraDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/LvovLeonidDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/LvovLeonidDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/MoreyArtyDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/MoreyArtyDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/NormalManAbsolutelyDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/NormalManAbsolutelyDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/PetrSanDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/PetrSanDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/SecondDayUtevFirstDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/SecondDayUtevFirstDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/SolmatovaEkaterinaDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/SolmatovaEkaterinaDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/ThalerDernulDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/ThalerDernulDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/UtevDialog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogs/UtevDialog.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents/CaesarAlgorithm.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents/CaesarAlgorithm.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents/CaesarBugs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents/CaesarBugs.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents/CaesarDevice.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents/CaesarDevice.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents/CaesarDocs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents/CaesarDocs.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents/VigenereDocs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Documents/VigenereDocs.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/ArchieRochesterOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/ArchieRochesterOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/CheerfulIceCreamManOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/CheerfulIceCreamManOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/ComradeNOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/ComradeNOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/GordonFreemenOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/GordonFreemenOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/JohanAndersonOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/JohanAndersonOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/KolesnikovaTamaraOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/KolesnikovaTamaraOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/LvovLeonidOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/LvovLeonidOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/MoreyArtyOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/MoreyArtyOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/NormalManAbsolutelyOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/NormalManAbsolutelyOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/PetrSanOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/PetrSanOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/SecondDayUtevFirstOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/SecondDayUtevFirstOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/SolmatovaEkaterinaOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/SolmatovaEkaterinaOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/ThalerDernulOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/ThalerDernulOrder.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/UtevOrder.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Orders/UtevOrder.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SecondDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SecondDay.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ThirdDay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ThirdDay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/TextTyperScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagementScripts/TextTyperScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuScripts/PauseMenuScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuScripts/PauseMenuScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/OrdersManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Orders/Quant/QuantOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Orders/Quant/QuantOrder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DialogManager/DialogManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/CaesarAlgorithm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/CaesarAlgorithm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/CaesarBugs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/CaesarBugs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/CaesarDevice.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/CaesarDevice.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/CaesarDocs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/CaesarDocs.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/VigenereDocs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Documents/VigenereDocs.txt.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +54,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Orders/SubmitOrderButtonScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/QuTunnelTesterScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScrollbarSpeed.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScrollviewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TaskbarScripts/TaskbarManagerScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/InputField.cs" root0="SKIP_HIGHLIGHTING" />
@@ -255,7 +207,8 @@
       <workItem from="1686916320085" duration="3328000" />
       <workItem from="1686981903224" duration="25308000" />
       <workItem from="1687017021763" duration="7547000" />
-      <workItem from="1687060059831" duration="15378000" />
+      <workItem from="1687060059831" duration="15604000" />
+      <workItem from="1687151999467" duration="3875000" />
     </task>
     <servers />
   </component>
