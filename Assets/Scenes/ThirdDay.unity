@@ -1124,8 +1124,8 @@ MonoBehaviour:
   machineName: Quant
   orderText: []
   submitOrder: {fileID: 634928174}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: 3d64bc40289cd9d48b0fb227c9f273da, type: 3}
+  dialogSound: {fileID: 8300000, guid: b478e934e39249c4c81d5c8ba21411d7, type: 3}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
   MvpiManager: {fileID: 1441201587}
@@ -6494,8 +6494,8 @@ MonoBehaviour:
   machineName: Quant
   orderText: []
   submitOrder: {fileID: 634928174}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: 3bfda1e13137a0145b96b646d28535d5, type: 3}
+  dialogSound: {fileID: 8300000, guid: 180b578eab9969c478778ccdb078e392, type: 3}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
   MvpiManager: {fileID: 1441201587}
@@ -7941,8 +7941,8 @@ MonoBehaviour:
   machineName: Quant
   orderText: []
   submitOrder: {fileID: 634928174}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: a39d2727f2f8ecf4899544014c07f42a, type: 3}
+  dialogSound: {fileID: 8300000, guid: 9893bae8657ff0c468b4459a8537a691, type: 3}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
   MvpiManager: {fileID: 1441201587}
@@ -10251,8 +10251,8 @@ MonoBehaviour:
   machineName: Quant
   orderText: []
   submitOrder: {fileID: 634928174}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: 4b5f6b3b8772f9749b33e5a93b46229f, type: 3}
+  dialogSound: {fileID: 8300000, guid: 51e65ee351306c34186ecacb71cf5b04, type: 3}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
   MvpiManager: {fileID: 1441201587}
@@ -11952,8 +11952,8 @@ MonoBehaviour:
   machineName: Quant
   orderText: []
   submitOrder: {fileID: 634928174}
-  orderSound: {fileID: 0}
-  dialogSound: {fileID: 0}
+  orderSound: {fileID: 8300000, guid: 5455dc96dddbed449ac25db2236068d6, type: 3}
+  dialogSound: {fileID: 8300000, guid: 9efef4eb84c7a6a44b5f5ccdc56f875f, type: 3}
   quTunnelTesterScript: {fileID: 935819457}
   KeyManager: {fileID: 1312847377}
   MvpiManager: {fileID: 1441201587}

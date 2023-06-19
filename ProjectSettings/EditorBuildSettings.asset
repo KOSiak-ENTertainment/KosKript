@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThirdDay.unity
     guid: b9d4480bf5c0d1b4d9cf2f69d9f57458
+  - enabled: 1
+    path: Assets/Scenes/LastScene.unity
+    guid: 4261092c1c2e6b545b9dfe3becc9fcdf
   m_configObjects: {}

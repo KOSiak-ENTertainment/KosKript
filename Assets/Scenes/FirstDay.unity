@@ -2400,7 +2400,7 @@ MonoBehaviour:
   orderText: []
   submitOrder: {fileID: 1889782588}
   orderSound: {fileID: 8300000, guid: ae5bda955b2a81c4eb2c6485cc7c18dd, type: 3}
-  dialogSound: {fileID: 0}
+  dialogSound: {fileID: 8300000, guid: 1191e3709c365db4bb46f5f8316284b6, type: 3}
   firstBugSolver: {fileID: 18735341}
   secondBugSolver: {fileID: 116665083}
 --- !u!114 &351737755
