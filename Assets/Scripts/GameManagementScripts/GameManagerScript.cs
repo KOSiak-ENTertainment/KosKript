@@ -124,11 +124,17 @@ namespace GameManagementScripts
             }
             
             if (gameState == GameStates.SeventhOrder)
-            { 
-                ActivateOrderButton(6);
-                UpdateMaxPossibleShift();
-                dialogManager.ShowSomeDialog(6);
-                HighlightOrdersButton();
+            {
+                if (SceneManager.GetActiveScene().name.Equals("ThirdDay"))
+                {
+                    SceneManager.LoadScene("LastScene");
+                }
+                else {
+                    ActivateOrderButton(6);
+                    UpdateMaxPossibleShift();
+                    dialogManager.ShowSomeDialog(6);
+                    HighlightOrdersButton();
+                }
                 gameState = GameStates.NothingToDo;
             }
         }
